@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyranidsApi", "TyranidsApi\TyranidsApi.csproj", "{686222AF-1DB5-4F23-A380-AAB93BA28251}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TyranidsData", "TyranidsData\TyranidsData.sqlproj", "{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,12 @@ Global
 		{686222AF-1DB5-4F23-A380-AAB93BA28251}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{686222AF-1DB5-4F23-A380-AAB93BA28251}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{686222AF-1DB5-4F23-A380-AAB93BA28251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
