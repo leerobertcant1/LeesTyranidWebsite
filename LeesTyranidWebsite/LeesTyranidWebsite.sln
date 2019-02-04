@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyranidsApi", "TyranidsApi\
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TyranidsData", "TyranidsData\TyranidsData.sqlproj", "{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyranidsWpfUI", "TyranidsWpfUI\TyranidsWpfUI.csproj", "{DC951342-3E75-4135-877E-2685F2999BA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DC951342-3E75-4135-877E-2685F2999BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC951342-3E75-4135-877E-2685F2999BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC951342-3E75-4135-877E-2685F2999BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC951342-3E75-4135-877E-2685F2999BA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
