@@ -4,6 +4,7 @@
     [DateAdded] DATETIME2 NOT NULL DEFAULT getutcdate(), 
     [ModelId] INT NOT NULL, 
     [PaintingActivityId] INT NOT NULL, 
-    [ToolId] INT NOT NULL
+    [ToolId] INT NOT NULL, 
+    [PictureId] INT NOT NULL
 
 )

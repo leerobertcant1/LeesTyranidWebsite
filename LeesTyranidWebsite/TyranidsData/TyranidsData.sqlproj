@@ -74,5 +74,6 @@
     <Build Include="dbo\Tables\Tool.sql" />
     <Build Include="dbo\Tables\ModelSectionActivity.sql" />
     <Build Include="dbo\Tables\PaintingActivityId.sql" />
+    <Build Include="dbo\Tables\Pictures.sql" />
   </ItemGroup>
 </Project>
