@@ -1,6 +1,8 @@
-﻿namespace TyranidsWpfUI.ViewModels
+﻿using Caliburn.Micro;
+
+namespace TyranidsWpfUI.ViewModels
 {
-    public class ShellViewModel
+    public class ShellViewModel: Conductor<object>
     {
     }
 }

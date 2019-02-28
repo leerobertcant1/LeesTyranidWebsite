@@ -6,7 +6,23 @@
         xmlns:local="clr-namespace:TyranidsWpfUI.Views"
         mc:Ignorable="d"
         Title="ShellView" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <Grid>
+            <Label Content="                                                                                                  LEE'S TYRANIDS SITE" VerticalAlignment="Top" HorizontalAlignment="Center" Width="795" Height="36" FontWeight="Bold" Background="Black" Foreground="White" BorderBrush="AliceBlue" />
+            <Label Content="Categories" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,36,0,0" Height="330" Width="80" FontWeight="Bold" Background="Black" Foreground="White"/>
+            <Label Content="    Filter" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,36,0,56.5" Width="83" Height="330" FontWeight="Bold" Background="Black" Foreground="White" />
+            <Label Content="                                                                                                               Lee Cant - Keen hobbyist" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="56" Margin="0,0,0,0.5" Width="795" FontWeight="Bold" Background="Black" Foreground="White"/>
+            <Label Content="" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="80,36,0,0" Height="330" Width="632" FontWeight="Bold" Background="Black" Foreground="White"/>
+        </Grid>
+    </DockPanel>
 </Window>
+
+<!--
+    *** Pull stuf from database ***
+    *** Read GW's IP thingy ***
+    1) Sub Menus for categories
+    2) Dropdowns for the Filter
+    3) My info in the footer
+    4) Images for home page
+    5) Separate view for the Homepage from Shellview.
+    -->
