@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using BusinessLogic.Services.Api;
+using BusinessLogic.Abstractions;
 using Caliburn.Micro;
 using TyranidsWpfUI.ViewModels;
 
@@ -19,8 +21,9 @@ namespace TyranidsWpfUI
             _container.Instance(_container);
             _container
                 .Singleton<IWindowManager, WindowManager>()
-                .Singleton<IEventAggregator, EventAggregator>();
-
+                .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<IApiService, ApiService>();
+            
             GetContainerTypes();
         }
 

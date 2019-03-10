@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyranidsApi", "TyranidsApi\TyranidsApi.csproj", "{686222AF-1DB5-4F23-A380-AAB93BA28251}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "TyranidsApi\Api.csproj", "{686222AF-1DB5-4F23-A380-AAB93BA28251}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TyranidsData", "TyranidsData\TyranidsData.sqlproj", "{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Data", "TyranidsData\Data.sqlproj", "{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyranidsWpfUI", "TyranidsWpfUI\TyranidsWpfUI.csproj", "{DC951342-3E75-4135-877E-2685F2999BA4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfUI", "TyranidsWpfUI\WpfUI.csproj", "{DC951342-3E75-4135-877E-2685F2999BA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TyranidsTest", "TyranidsTest\TyranidsTest.csproj", "{71C45497-7CC7-4B04-A8B1-70B589922FDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "TyranidsTest\Tests.csproj", "{71C45497-7CC7-4B04-A8B1-70B589922FDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{13F51486-03F7-4D33-8927-9D2209C6EA50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{71C45497-7CC7-4B04-A8B1-70B589922FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71C45497-7CC7-4B04-A8B1-70B589922FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71C45497-7CC7-4B04-A8B1-70B589922FDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F51486-03F7-4D33-8927-9D2209C6EA50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F51486-03F7-4D33-8927-9D2209C6EA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F51486-03F7-4D33-8927-9D2209C6EA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F51486-03F7-4D33-8927-9D2209C6EA50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
