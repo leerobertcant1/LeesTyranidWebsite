@@ -1,4 +1,4 @@
-namespace TyranidsApi.Areas.HelpPage.ModelDescriptions
+namespace DataManager.Areas.HelpPage.ModelDescriptions
 {
     public class DictionaryModelDescription : KeyValuePairModelDescription
     {

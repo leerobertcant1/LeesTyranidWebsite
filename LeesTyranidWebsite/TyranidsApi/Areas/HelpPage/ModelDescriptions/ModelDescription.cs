@@ -1,6 +1,6 @@
 using System;
 
-namespace TyranidsApi.Areas.HelpPage.ModelDescriptions
+namespace DataManager.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

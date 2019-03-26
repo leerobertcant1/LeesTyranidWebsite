@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using TyranidsApi.Areas.HelpPage.ModelDescriptions;
-using TyranidsApi.Areas.HelpPage.Models;
+using DataManager.Areas.HelpPage.ModelDescriptions;
+using DataManager.Areas.HelpPage.Models;
 
-namespace TyranidsApi.Areas.HelpPage
+namespace DataManager.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

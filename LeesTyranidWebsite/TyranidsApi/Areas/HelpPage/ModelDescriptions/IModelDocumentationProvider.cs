@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace TyranidsApi.Areas.HelpPage.ModelDescriptions
+namespace DataManager.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

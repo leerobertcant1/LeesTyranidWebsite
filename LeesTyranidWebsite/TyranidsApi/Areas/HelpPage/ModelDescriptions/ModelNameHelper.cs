@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace TyranidsApi.Areas.HelpPage.ModelDescriptions
+namespace DataManager.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

@@ -1,4 +1,4 @@
-﻿namespace TyranidsApi.Static_Values
+﻿namespace Api.Static_Values
 {
     public static class WebTypes
     {

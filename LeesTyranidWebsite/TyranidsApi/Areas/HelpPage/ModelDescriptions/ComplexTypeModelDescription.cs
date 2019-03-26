@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace TyranidsApi.Areas.HelpPage.ModelDescriptions
+namespace DataManager.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

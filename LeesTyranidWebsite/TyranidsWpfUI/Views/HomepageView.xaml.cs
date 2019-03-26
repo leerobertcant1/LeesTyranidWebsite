@@ -1,5 +1,5 @@
-﻿using BusinessLogic.Abstractions;
-using System;
+﻿using Api.Controllers;
+using DataManager.Abstractions;
 using System.Windows;
 using TyranidsWpfUI.ViewModels;
 
@@ -7,27 +7,27 @@ namespace TyranidsWpfUI.Views
 {
     public partial class HomePageView : Window
     {
-        private IApiService _apiService;
+        private IQueryUnitOfWork _queryUnitOfWork;
+        private IRepositoryFactory _repositoryFactory;
 
-        public HomePageView(IApiService apiService)
+        public HomePageView(IQueryUnitOfWork queryUnitOfWork, IRepositoryFactory repositoryFactory)
         {
-            _apiService = apiService;
+            _queryUnitOfWork = queryUnitOfWork;
+
+            _repositoryFactory = repositoryFactory;
+
             InitializeComponent();
         }
-         
+       
         private void HomePageButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                var result = _apiService.Authenticate("", "");
-                var homepage = new HomepageViewModel();
+            var homepage = new HomepageViewModel();
 
-                homepage.Show();
+            var data = new ModelsController(_queryUnitOfWork, _repositoryFactory).GetAllModels();
 
-                Close();
-            }
-            catch(Exception ex)
-            { /*Log here */} 
+            homepage.Show();
+
+            Close();
         }
     }
 }

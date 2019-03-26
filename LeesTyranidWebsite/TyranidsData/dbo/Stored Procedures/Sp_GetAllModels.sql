@@ -1,0 +1,8 @@
+﻿CREATE PROCEDURE  [dbo].[Sp_GetAllModels]
+AS
+
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT * FROM dbo.Model
+END

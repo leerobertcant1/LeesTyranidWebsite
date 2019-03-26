@@ -1,14 +1,14 @@
-﻿using BusinessLogic.Abstractions;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
+using DataManager.Abstractions;
 using TyranidsWpfUI.Views;
 
 namespace TyranidsWpfUI.ViewModels
 {
     public class ShellViewModel: Conductor<object>
     {
-        public ShellViewModel(IApiService apiService)
+        public ShellViewModel(IQueryUnitOfWork queryUnitOfWork, IRepositoryFactory repositoryFactory)
         {
-            var homepageView = new HomePageView(apiService);
+            var homepageView = new HomePageView(queryUnitOfWork, repositoryFactory);
 
             homepageView.ShowDialog();
         }

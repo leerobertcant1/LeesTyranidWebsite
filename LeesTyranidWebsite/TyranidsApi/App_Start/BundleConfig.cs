@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace TyranidsApi
+namespace DataManager
 {
     public class BundleConfig
     {

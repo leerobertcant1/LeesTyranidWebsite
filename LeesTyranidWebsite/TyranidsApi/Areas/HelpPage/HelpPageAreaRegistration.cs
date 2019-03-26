@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace TyranidsApi.Areas.HelpPage
+namespace DataManager.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

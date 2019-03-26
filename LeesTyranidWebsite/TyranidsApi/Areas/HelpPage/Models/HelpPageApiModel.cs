@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using TyranidsApi.Areas.HelpPage.ModelDescriptions;
+using DataManager.Areas.HelpPage.ModelDescriptions;
 
-namespace TyranidsApi.Areas.HelpPage.Models
+namespace DataManager.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

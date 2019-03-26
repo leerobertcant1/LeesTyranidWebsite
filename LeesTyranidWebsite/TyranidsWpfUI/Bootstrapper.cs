@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
-using BusinessLogic.Services.Api;
-using BusinessLogic.Abstractions;
 using Caliburn.Micro;
+using DataManager.Abstractions;
+using DataManager.Factories;
+using DataManager.Unit_Of_Work.Query;
 using TyranidsWpfUI.ViewModels;
 
 namespace TyranidsWpfUI
@@ -22,8 +23,9 @@ namespace TyranidsWpfUI
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
-                .Singleton<IApiService, ApiService>();
-            
+                .Singleton<IQueryUnitOfWork, QueryUnitOfWork>()
+                .Singleton<IRepositoryFactory, RepositoryFactory>();
+                      
             GetContainerTypes();
         }
 

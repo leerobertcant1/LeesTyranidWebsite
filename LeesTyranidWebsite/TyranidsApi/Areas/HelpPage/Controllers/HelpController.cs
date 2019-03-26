@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using TyranidsApi.Areas.HelpPage.ModelDescriptions;
-using TyranidsApi.Areas.HelpPage.Models;
+using DataManager.Areas.HelpPage.ModelDescriptions;
+using DataManager.Areas.HelpPage.Models;
 
-namespace TyranidsApi.Areas.HelpPage.Controllers
+namespace DataManager.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

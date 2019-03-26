@@ -4,15 +4,15 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(TyranidsApi.Startup))]
+[assembly: OwinStartup(typeof(DataManager.Startup))]
 
-namespace TyranidsApi
+namespace DataManager
 {
     public partial class Startup
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+
         }
     }
 }
