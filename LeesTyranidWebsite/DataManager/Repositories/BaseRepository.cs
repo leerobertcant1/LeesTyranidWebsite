@@ -2,7 +2,7 @@
 
 namespace DataManager.Repositories
 {
-    public abstract class BaseRepository
+    public class BaseRepository
     {
         protected readonly string GetAllFrom = $"{QuerySyntax.Select} {QuerySyntax.AllFrom}";
     }

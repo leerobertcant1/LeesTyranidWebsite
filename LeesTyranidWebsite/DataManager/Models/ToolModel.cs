@@ -1,6 +1,6 @@
 ﻿namespace DataManager.Models
 {
-    class ToolModel
+    public class ToolModel: BaseModel
     {
     }
 }

@@ -54,9 +54,12 @@
   <ItemGroup>
     <Compile Include="Abstractions\IRepository.cs" />
     <Compile Include="Abstractions\IRepositoryFactory.cs" />
+    <Compile Include="Entities\BaseEntityTable.cs" />
     <Compile Include="Enums\EntityTypeEnum.cs" />
     <Compile Include="Factories\RepositoryFactory.cs" />
+    <Compile Include="Models\ClassificationModel.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\ClassificationRepository.cs" />
     <Compile Include="Repositories\ModelRepository.cs" />
     <Compile Include="Repositories\ModelSectionActivityRepository.cs" />
     <Compile Include="Repositories\ModelSectionRepository.cs" />

@@ -3,6 +3,7 @@ using DataManager.Abstractions;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace DataManager.Unit_Of_Work.Query
 {
@@ -13,13 +14,13 @@ namespace DataManager.Unit_Of_Work.Query
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-
-                var rows = connection.Query<T>(query).ToList();
+                
+                var rows =  connection.Query<T>(query).AsEnumerable();
 
                 connection.Close();
 
-                return rows.AsEnumerable();
-            }      
+                return rows;
+            }
         }
     }
 }

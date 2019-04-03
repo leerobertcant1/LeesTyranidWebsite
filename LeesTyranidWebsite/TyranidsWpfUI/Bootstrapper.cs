@@ -6,6 +6,8 @@ using Caliburn.Micro;
 using DataManager.Abstractions;
 using DataManager.Factories;
 using DataManager.Unit_Of_Work.Query;
+using TyranidsApi.Abstractions;
+using TyranidsApi.Services;
 using TyranidsWpfUI.ViewModels;
 
 namespace TyranidsWpfUI
@@ -20,12 +22,14 @@ namespace TyranidsWpfUI
         protected override void Configure()
         {
             _container.Instance(_container);
+
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
                 .Singleton<IQueryUnitOfWork, QueryUnitOfWork>()
-                .Singleton<IRepositoryFactory, RepositoryFactory>();
-                      
+                .Singleton<IRepositoryFactory, RepositoryFactory>()
+                .Singleton<IApiService, ApiService>();
+                               
             GetContainerTypes();
         }
 

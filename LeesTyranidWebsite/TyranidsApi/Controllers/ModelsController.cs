@@ -2,6 +2,11 @@
 using DataManager.Abstractions;
 using DataManager.Enums;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Text;
 using System.Web.Http;
 
 namespace Api.Controllers
@@ -17,12 +22,20 @@ namespace Api.Controllers
             _queryUnitOfWork = queryUnitOfWork;
             _repositoryFactory = repositoryFactory;
         }
-            
-        public string GetAllModels()
+
+        [HttpGet]
+        public HttpResponseMessage GetAllModels()
         {
             var items = _repositoryFactory.Make(EntityTypeEnum.Model).GetAll(GlobalTypes.DbConnectionString, _queryUnitOfWork);
+            var noItems = !items.Any();
 
-            return JsonConvert.SerializeObject(items); 
+            if (noItems)
+                return new HttpResponseMessage(HttpStatusCode.NoContent);
+
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JsonConvert.SerializeObject(items), Encoding.UTF8, WebTypes.Json)
+            };
         }
     }
 }

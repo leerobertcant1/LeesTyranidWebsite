@@ -1,17 +1,15 @@
 ﻿namespace DataManager.Entities
 {
-    public static class EntityTable
+    public class EntityTable: BaseEntityTable
     {
-        private static string database = "[TyranidsData]";
-        private static string databaseAlias = "[dbo]";
-
-        public static readonly string ModelEntity = $"{database}.{databaseAlias}.[Model]";
-        public static readonly string ModelSectionEntity = $"{database}.{databaseAlias}.[ModelSection]";
-        public static readonly string ModelSectionActivityEntity = $"{database}.{databaseAlias}.[ModelSectionActivity]";
-        public static readonly string PaintEntity = $"{database}.{databaseAlias}.[Paint]";
-        public static readonly string PaintingActivityEntity = $"{database}.{databaseAlias}.[PaintingActivity]";
-        public static readonly string PictureEntity = $"{database}.{databaseAlias}.[Picture]";
-        public static readonly string TechniqueEntity = $"{database}.{databaseAlias}.[Technique]";
-        public static readonly string ToolEntity = $"{database}.{databaseAlias}.[Tool]";
+        public static readonly string ClassificationEntity = $"{QueryPrefix}[Classification]";
+        public static readonly string ModelEntity = $"{QueryPrefix}[Model]";
+        public static readonly string ModelSectionEntity = $"{QueryPrefix}[ModelSection]";
+        public static readonly string ModelSectionActivityEntity = $"{QueryPrefix}[ModelSectionActivity]";
+        public static readonly string PaintEntity = $"{QueryPrefix}[Paint]";
+        public static readonly string PaintingActivityEntity = $"{QueryPrefix}[PaintingActivity]";
+        public static readonly string PictureEntity = $"{QueryPrefix}[Picture]";
+        public static readonly string TechniqueEntity = $"{QueryPrefix}[Technique]";
+        public static readonly string ToolEntity = $"{QueryPrefix}[Tool]";
     }
 }

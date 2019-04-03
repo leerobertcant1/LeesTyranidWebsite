@@ -1,29 +1,45 @@
 ﻿using Api.Controllers;
+using Api.Static_Values;
 using DataManager.Abstractions;
+using System;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Windows;
+using TyranidsApi.Abstractions;
+using TyranidsApi.Static_Values;
 using TyranidsWpfUI.ViewModels;
 
 namespace TyranidsWpfUI.Views
 {
     public partial class HomePageView : Window
     {
+        private IApiService _apiService;
         private IQueryUnitOfWork _queryUnitOfWork;
         private IRepositoryFactory _repositoryFactory;
 
-        public HomePageView(IQueryUnitOfWork queryUnitOfWork, IRepositoryFactory repositoryFactory)
+        public HomePageView(IApiService apiService, IQueryUnitOfWork queryUnitOfWork, IRepositoryFactory repositoryFactory)
         {
+            _apiService = apiService;
             _queryUnitOfWork = queryUnitOfWork;
-
             _repositoryFactory = repositoryFactory;
 
             InitializeComponent();
         }
        
-        private void HomePageButton_Click(object sender, RoutedEventArgs e)
+        private async void HomePageButton_Click(object sender, RoutedEventArgs e)
         {
             var homepage = new HomepageViewModel();
+            var result = string.Empty;
 
-            var data = new ModelsController(_queryUnitOfWork, _repositoryFactory).GetAllModels();
+
+            //Need to write service to handle this in JSON
+            var response = await _apiService.GetData(ApiEndpoints.Models);
+
+            if (!response.IsSuccessStatusCode)
+                result = "An error occcured";
+            else
+                result = response.Content.ReadAsStringAsync().Result;
+
 
             homepage.Show();
 
