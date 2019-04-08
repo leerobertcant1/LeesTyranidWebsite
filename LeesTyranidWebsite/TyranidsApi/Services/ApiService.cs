@@ -20,7 +20,6 @@ namespace TyranidsApi.Services
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(WebTypes.Json));
 
                 return  await client.GetAsync(apiUrl);
-
             }
         }
     }

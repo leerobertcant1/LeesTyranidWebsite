@@ -3,7 +3,6 @@ using DataManager.Abstractions;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace DataManager.Unit_Of_Work.Query
 {

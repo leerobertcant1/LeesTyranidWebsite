@@ -5,6 +5,7 @@ using System.Windows;
 using Caliburn.Micro;
 using DataManager.Abstractions;
 using DataManager.Factories;
+using DataManager.Services;
 using DataManager.Unit_Of_Work.Query;
 using TyranidsApi.Abstractions;
 using TyranidsApi.Services;
@@ -24,11 +25,12 @@ namespace TyranidsWpfUI
             _container.Instance(_container);
 
             _container
-                .Singleton<IWindowManager, WindowManager>()
+                .Singleton<IApiService, ApiService>()    
                 .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<IJsonService, JsonService>()
                 .Singleton<IQueryUnitOfWork, QueryUnitOfWork>()
-                .Singleton<IRepositoryFactory, RepositoryFactory>()
-                .Singleton<IApiService, ApiService>();
+                .Singleton<IRepositoryFactory, RepositoryFactory>()         
+                .Singleton<IWindowManager, WindowManager>();
                                
             GetContainerTypes();
         }

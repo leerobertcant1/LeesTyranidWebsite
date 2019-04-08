@@ -1,8 +1,6 @@
 ﻿using DataManager.Abstractions;
 using DataManager.Entities;
-using DataManager.Models;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace DataManager.Repositories
 {

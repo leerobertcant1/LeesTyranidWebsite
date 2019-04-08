@@ -1,25 +1,25 @@
-﻿using Api.Controllers;
-using Api.Static_Values;
-using DataManager.Abstractions;
-using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
+﻿using DataManager.Abstractions;
 using System.Windows;
 using TyranidsApi.Abstractions;
 using TyranidsApi.Static_Values;
 using TyranidsWpfUI.ViewModels;
+using DataManager.Models;
+using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 
 namespace TyranidsWpfUI.Views
 {
     public partial class HomePageView : Window
     {
         private IApiService _apiService;
+        private IJsonService _jsonService;
         private IQueryUnitOfWork _queryUnitOfWork;
         private IRepositoryFactory _repositoryFactory;
 
-        public HomePageView(IApiService apiService, IQueryUnitOfWork queryUnitOfWork, IRepositoryFactory repositoryFactory)
+        public HomePageView(IApiService apiService, IJsonService jsonService,  IQueryUnitOfWork queryUnitOfWork, IRepositoryFactory repositoryFactory)
         {
             _apiService = apiService;
+            _jsonService = jsonService;
             _queryUnitOfWork = queryUnitOfWork;
             _repositoryFactory = repositoryFactory;
 
@@ -31,16 +31,17 @@ namespace TyranidsWpfUI.Views
             var homepage = new HomepageViewModel();
             var result = string.Empty;
 
-
-            //Need to write service to handle this in JSON
             var response = await _apiService.GetData(ApiEndpoints.Models);
 
             if (!response.IsSuccessStatusCode)
                 result = "An error occcured";
             else
-                result = response.Content.ReadAsStringAsync().Result;
+            {
+                var asyncResult = response.Content.ReadAsStringAsync().Result;
 
-
+                var items = _jsonService.ConvertJsonList<ModelModel>(asyncResult);           
+            }
+      
             homepage.Show();
 
             Close();
