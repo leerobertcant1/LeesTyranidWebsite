@@ -23,9 +23,9 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage GetAllModels()
+        public HttpResponseMessage GetAll(EntityTypeEnum entityTypeEnum)
         {
-            var items = _repositoryFactory.Make(EntityTypeEnum.Model).GetAll(GlobalTypes.DbConnectionString, _queryUnitOfWork);
+            var items = _repositoryFactory.Make(entityTypeEnum).GetAll(GlobalTypes.DbConnectionString, _queryUnitOfWork);
             var noItems = !items.Any();
 
             if (noItems)

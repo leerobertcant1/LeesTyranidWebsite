@@ -299,7 +299,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ModelsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -309,6 +308,7 @@
     <Compile Include="Services\ApiService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Static Values\ApiEndpoints.cs" />
+    <Compile Include="Static Values\ApiQueryParams.cs" />
     <Compile Include="Static Values\GlobalTypes.cs" />
     <Compile Include="Static Values\WebTypes.cs" />
   </ItemGroup>

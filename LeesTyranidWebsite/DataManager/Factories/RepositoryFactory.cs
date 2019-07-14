@@ -10,6 +10,8 @@ namespace DataManager.Factories
         {
             switch (entityTypeEnum)
             {
+                case EntityTypeEnum.Classification:
+                    return new ClassificationRepository<dynamic>();
                 case EntityTypeEnum.Model:
                     return new ModelRepository<dynamic>();
                 case EntityTypeEnum.ModelSection:

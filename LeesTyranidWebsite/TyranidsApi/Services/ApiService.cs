@@ -9,17 +9,15 @@ namespace TyranidsApi.Services
 {
     public class ApiService: IApiService
     {
-        public async Task<HttpResponseMessage> GetData(string endPoint)
+        public async Task<HttpResponseMessage> GetDataAsync(string endPoint)
         {
-            var apiUrl = $"{GlobalTypes.TestApiLocation}/{endPoint}";
-
-            using (HttpClient client = new HttpClient())
+            using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(apiUrl);
+                client.BaseAddress = new Uri(endPoint);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(WebTypes.Json));
 
-                return  await client.GetAsync(apiUrl);
+                return  await client.GetAsync(endPoint);
             }
         }
     }

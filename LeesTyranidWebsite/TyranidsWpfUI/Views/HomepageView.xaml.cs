@@ -4,8 +4,7 @@ using TyranidsApi.Abstractions;
 using TyranidsApi.Static_Values;
 using TyranidsWpfUI.ViewModels;
 using DataManager.Models;
-using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
+
 
 namespace TyranidsWpfUI.Views
 {

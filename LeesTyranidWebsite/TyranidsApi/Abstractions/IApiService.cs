@@ -5,6 +5,6 @@ namespace TyranidsApi.Abstractions
 {
     public interface IApiService
     {
-        Task<HttpResponseMessage> GetData(string endPoint);
+        Task<HttpResponseMessage> GetDataAsync(string endPoint);
     }
 }
