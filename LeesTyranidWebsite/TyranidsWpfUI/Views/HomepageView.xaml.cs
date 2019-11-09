@@ -30,7 +30,7 @@ namespace TyranidsWpfUI.Views
             var homepage = new HomepageViewModel();
             var result = string.Empty;
 
-            var response = await _apiService.GetData(ApiEndpoints.Models);
+            var response = await _apiService.GetDataAsync(ApiEndpoints.Models);
 
             if (!response.IsSuccessStatusCode)
                 result = "An error occcured";
