@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\leero\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\leero\\.nuget\\packages"
+    ]
+  }
+}

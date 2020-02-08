@@ -1,0 +1,14 @@
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\bin\Debug\DataManager.dll.config
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\bin\Debug\DataManager.dll
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\bin\Debug\DataManager.pdb
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\bin\Debug\Dapper.dll
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\bin\Debug\Newtonsoft.Json.dll
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\bin\Debug\NLog.dll
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\bin\Debug\Dapper.xml
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\bin\Debug\Newtonsoft.Json.pdb
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\bin\Debug\Newtonsoft.Json.xml
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\bin\Debug\NLog.xml
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\obj\Debug\Tyranids.DataManager.csprojAssemblyReference.cache
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\obj\Debug\Tyranids.DataManager.csproj.CopyComplete
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\obj\Debug\DataManager.dll
+C:\GitRepos\LeesTyranidWebsite\LeesTyranidWebsite\DataManager\obj\Debug\DataManager.pdb
