@@ -1,31 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\MvcUi\\Tyranids.MvcUi.csproj": {}
+    "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\MvcUi\\Tyranids.MvcUi.csproj": {}
   },
   "projects": {
-    "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\DataManager\\Tyranids.DataManager.csproj": {
-      "version": "1.0.0",
+    "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\DataManager\\Tyranids.DataManager.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\DataManager\\Tyranids.DataManager.csproj",
+        "projectUniqueName": "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\DataManager\\Tyranids.DataManager.csproj",
         "projectName": "Tyranids.DataManager",
-        "projectPath": "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\DataManager\\Tyranids.DataManager.csproj"
+        "projectPath": "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\DataManager\\Tyranids.DataManager.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\MvcUi\\Tyranids.MvcUi.csproj": {
+    "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\MvcUi\\Tyranids.MvcUi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\MvcUi\\Tyranids.MvcUi.csproj",
+        "projectUniqueName": "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\MvcUi\\Tyranids.MvcUi.csproj",
         "projectName": "Tyranids.MvcUi",
-        "projectPath": "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\MvcUi\\Tyranids.MvcUi.csproj",
-        "packagesPath": "C:\\Users\\leero\\.nuget\\packages\\",
-        "outputPath": "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\MvcUi\\obj\\",
+        "projectPath": "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\MvcUi\\Tyranids.MvcUi.csproj",
+        "packagesPath": "C:\\Users\\Lee\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\MvcUi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\leero\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lee\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,8 +37,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj": {
-                "projectPath": "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj"
+              "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj": {
+                "projectPath": "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj"
               }
             }
           }
@@ -93,21 +92,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj": {
-      "version": "1.0.0",
+    "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj",
         "projectName": "Tyranids.Api",
-        "projectPath": "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj",
+        "projectPath": "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\DataManager\\Tyranids.DataManager.csproj": {
-                "projectPath": "C:\\GitRepos\\LeesTyranidWebsite\\LeesTyranidWebsite\\DataManager\\Tyranids.DataManager.csproj"
+              "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\DataManager\\Tyranids.DataManager.csproj": {
+                "projectPath": "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\DataManager\\Tyranids.DataManager.csproj"
               }
             }
           }

@@ -35,3 +35,7 @@ body {
         display: none;
     }
 }
+
+.cookie-container {
+    margin-bottom: 2%;
+}
