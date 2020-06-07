@@ -36,12 +36,20 @@ body {
     }
 }
 
+#cookieConsent {
+    display: none;
+}
+
 .cookie-button {
     margin: 0 5% 5% 0;
 }
 
 .cookie-container {
-    color: white;
     background-color: darkslategrey;
+    color: white;
     margin-bottom: 2%;
+}
+
+.navbar-brand {
+    color: white !important;
 }
