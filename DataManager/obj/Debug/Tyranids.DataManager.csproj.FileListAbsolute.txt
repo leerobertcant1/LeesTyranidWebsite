@@ -27,3 +27,18 @@ C:\Users\Lee\source\repos\leerobertcant1\LeesTyranidWebsite\DataManager\obj\Debu
 C:\Users\Lee\source\repos\leerobertcant1\LeesTyranidWebsite\DataManager\obj\Debug\Tyranids.DataManager.csproj.CopyComplete
 C:\Users\Lee\source\repos\leerobertcant1\LeesTyranidWebsite\DataManager\obj\Debug\DataManager.dll
 C:\Users\Lee\source\repos\leerobertcant1\LeesTyranidWebsite\DataManager\obj\Debug\DataManager.pdb
+C:\Github Repositories\LeesTyranidWebsite\DataManager\bin\Debug\DataManager.dll.config
+C:\Github Repositories\LeesTyranidWebsite\DataManager\bin\Debug\DataManager.dll
+C:\Github Repositories\LeesTyranidWebsite\DataManager\bin\Debug\DataManager.pdb
+C:\Github Repositories\LeesTyranidWebsite\DataManager\bin\Debug\Dapper.dll
+C:\Github Repositories\LeesTyranidWebsite\DataManager\bin\Debug\Newtonsoft.Json.dll
+C:\Github Repositories\LeesTyranidWebsite\DataManager\bin\Debug\NLog.dll
+C:\Github Repositories\LeesTyranidWebsite\DataManager\bin\Debug\Dapper.xml
+C:\Github Repositories\LeesTyranidWebsite\DataManager\bin\Debug\Newtonsoft.Json.pdb
+C:\Github Repositories\LeesTyranidWebsite\DataManager\bin\Debug\Newtonsoft.Json.xml
+C:\Github Repositories\LeesTyranidWebsite\DataManager\bin\Debug\NLog.xml
+C:\Github Repositories\LeesTyranidWebsite\DataManager\obj\Debug\Tyranids.DataManager.csprojAssemblyReference.cache
+C:\Github Repositories\LeesTyranidWebsite\DataManager\obj\Debug\Tyranids.DataManager.csproj.CoreCompileInputs.cache
+C:\Github Repositories\LeesTyranidWebsite\DataManager\obj\Debug\Tyranids.DataManager.csproj.CopyComplete
+C:\Github Repositories\LeesTyranidWebsite\DataManager\obj\Debug\DataManager.dll
+C:\Github Repositories\LeesTyranidWebsite\DataManager\obj\Debug\DataManager.pdb

@@ -12683,19 +12683,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lee\\.nuget\\packages\\": {}
+    "C:\\Users\\leecant\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\MvcUi\\Tyranids.MvcUi.csproj",
+      "projectUniqueName": "C:\\Github Repositories\\LeesTyranidWebsite\\MvcUi\\Tyranids.MvcUi.csproj",
       "projectName": "Tyranids.MvcUi",
-      "projectPath": "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\MvcUi\\Tyranids.MvcUi.csproj",
-      "packagesPath": "C:\\Users\\Lee\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\MvcUi\\obj\\",
+      "projectPath": "C:\\Github Repositories\\LeesTyranidWebsite\\MvcUi\\Tyranids.MvcUi.csproj",
+      "packagesPath": "C:\\Users\\leecant\\.nuget\\packages\\",
+      "outputPath": "C:\\Github Repositories\\LeesTyranidWebsite\\MvcUi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Lee\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\leecant\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12708,8 +12708,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj": {
-              "projectPath": "C:\\Users\\Lee\\source\\repos\\leerobertcant1\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj"
+            "C:\\Github Repositories\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj": {
+              "projectPath": "C:\\Github Repositories\\LeesTyranidWebsite\\TyranidsApi\\Tyranids.Api.csproj"
             }
           }
         }
@@ -12763,7 +12763,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   },
