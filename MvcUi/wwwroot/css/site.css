@@ -74,12 +74,28 @@ body
     padding: 1%;
 }
 
+.navbar-header a:hover 
+{
+    color: white;
+}
+
 .navbar-top 
 {
     background-color: #1f7a72;
 }
 
-.tyranids-title
+.general-title 
+{
+    color: #008000;
+}
+
+.paragraph-text
+{
+    font-family: Arial;
+    font-size: 1.2em;
+}
+
+.tyranids-title 
 {
     margin-top: 2%;
 }
