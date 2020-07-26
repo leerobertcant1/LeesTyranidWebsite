@@ -189,10 +189,6 @@ C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Tyranids
 C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Tyranids.MvcUi.TagHelpers.input.cache
 C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Tyranids.MvcUi.TagHelpers.output.cache
 C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Tyranids.MvcUi.RazorCoreGenerate.cache
-C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.cshtml.g.cs
-C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.cshtml.g.cs
-C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
 C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -206,3 +202,9 @@ C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Tyranids
 C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Tyranids.MvcUi.dll
 C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Tyranids.MvcUi.pdb
 C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Tyranids.MvcUi.genruntimeconfig.cache
+C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Razor\Views\Home\Elites.cshtml.g.cs
+C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Razor\Views\Home\FastAttack.cshtml.g.cs
+C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Razor\Views\Home\HeavySupport.cshtml.g.cs
+C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Razor\Views\Home\HQ.cshtml.g.cs
+C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Razor\Views\Home\Troops.cshtml.g.cs
+C:\Github Repositories\LeesTyranidWebsite\MvcUi\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs

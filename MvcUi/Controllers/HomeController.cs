@@ -7,13 +7,32 @@ namespace MvcUi.Controllers
 {
     public class HomeController : Controller
     {
-
-        public HomeController()
+        public IActionResult Index()
         {
-
+            return View();
         }
 
-        public IActionResult Index()
+        public IActionResult HQ()
+        {
+            return View();
+        }
+
+        public IActionResult Troops()
+        {
+            return View();
+        }
+
+        public IActionResult Elites()
+        {
+            return View();
+        }
+
+        public IActionResult FastAttack()
+        {
+            return View();
+        }
+
+        public IActionResult HeavySupport()
         {
             return View();
         }

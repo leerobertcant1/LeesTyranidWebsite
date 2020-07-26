@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿$(document).ready(function ()
+{
     $.ajax({
         url: 'Home/GetBannerData',
         type: 'GET',
@@ -12,4 +13,24 @@
         }
     });
 });
+
+function setNavBarCss(navbarItemId)
+{
+    removeNavbarHighlight();
+
+    $("#" + navbarItemId).addClass("navbar-brand");
+}
+
+function removeNavbarHighlight()
+{
+    var navbarItems = $(".navbar-item");
+
+    if (!navbarItems) {
+        return;
+    }
+
+    for (var i = 0; i < navbarItems.length; i++) {
+        $(navbarItems[i]).removeClass("navbar-brand");
+    }
+}
 
