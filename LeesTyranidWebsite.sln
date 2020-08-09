@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyranids.Api", "TyranidsApi\Tyranids.Api.csproj", "{686222AF-1DB5-4F23-A380-AAB93BA28251}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Tyraniids.Data", "TyranidsData\Tyraniids.Data.sqlproj", "{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Tyranids.Data", "TyranidsData\Tyranids.Data.sqlproj", "{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfUI", "TyranidsWpfUI\WpfUI.csproj", "{DC951342-3E75-4135-877E-2685F2999BA4}"
 EndProject

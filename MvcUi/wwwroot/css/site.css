@@ -1,85 +1,75 @@
 ﻿/* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
-.body-content 
-{
+.body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
 /* Carousel */
-.carousel-caption p 
-{
+.carousel-caption p {
     font-size: 20px;
     line-height: 1.4;
 }
 
 /* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] 
-{
+.carousel-inner .item img[src$=".svg"] {
     width: 100%;
 }
 
 /* QR code generator */
-#qrCode 
-{
+#qrCode {
     margin: 15px;
 }
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
-    .carousel-caption 
-    {
+    .carousel-caption {
         display: none;
     }
 }
 
-body 
-{
+body {
     margin:0;
     padding: 0;
 }
 
-#cookieConsent 
-{
+#cookieConsent {
     display: none;
 }
 
-.cookie-button 
-{
+.cookie-button {
     margin: 0 5% 5% 0;
 }
 
-.cookie-container 
-{
+.cookie-container {
     background-color: darkslategrey;
     color: white;
     margin-bottom: 2%;
     margin-top: 5%;
 }
 
-.navbar-brand 
-{
+.model-role-title {
+    margin-top: 5%;
+}
+
+.navbar-brand {
     color: white !important;
 }
 
-.navbar-header
-{
+.navbar-header {
     width: 80%;
 }
 
-.navbar-header a 
-{
+.navbar-header a {
     padding: 1%;
 }
 
-.navbar-header a:hover
-{
+.navbar-header a:hover{
     color: white;
 }
 
-#navbarHome
-{
+#navbarHome {
     color: greenyellow !important;
 }
 
@@ -87,18 +77,15 @@ body
     background-color: #1f7a72;
 }
 
-.general-title 
-{
+.general-title {
     color: #008000;
 }
 
-.paragraph-text
-{
+.paragraph-text{
     font-family: Arial;
     font-size: 1.2em;
 }
 
-.tyranids-title 
-{
+.tyranids-title {
     margin-top: 2%;
 }

@@ -1,24 +1,27 @@
-﻿$(document).ready(function ()
-{
-    $.ajax({
-        url: 'Home/GetBannerData',
-        type: 'GET',
-        contentType: 'application/json;',
-        success: function (response) {
-            let titles = response.split(',');
+﻿$(document).ready(function () {
+    var navbarItemId = sessionStorage.getItem(globals.properties.ids.navbar);
 
-            titles.forEach(function (entry) {
-                $("#navbarHeader").append("<a class='navbar-brand' href='/'>" + entry + "</a>");
-            });
-        }
-    });
+    if (!navbarItemId) {
+        return;
+    }
+
+    setNavBarCss(navbarItemId);
 });
 
 function setNavBarCss(navbarItemId)
 {
     removeNavbarHighlight();
 
+    var isNavBarHome = $.trim(("#" + navbarItemId)).toLowerCase() === "navbarhome";
+
+    if (isNavBarHome) {
+        sessionStorage.setItem(globals.properties.ids.navbar, null);
+        return;
+    }
+
     $("#" + navbarItemId).addClass("navbar-brand");
+
+    sessionStorage.setItem(globals.properties.ids.navbar, navbarItemId);
 }
 
 function removeNavbarHighlight()
