@@ -1,9 +1,15 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.Net.Http;
+using System.Threading.Tasks;
 using DataManager.Abstractions;
+using DataManager.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MvcUi.Models;
+using Tyranids.MvcUi.Models;
 using TyranidsApi.Abstractions;
+using TyranidsApi.Static_Values;
 
 namespace MvcUi.Controllers
 {
@@ -19,18 +25,13 @@ namespace MvcUi.Controllers
 
     public class HomeController : Controller
     {
-        private IApiService _apiService;
-        private IJsonService _jsonService;
-        private IQueryUnitOfWork _queryUnitOfWork;
-        private IRepositoryFactory _repositoryFactory;
+        private readonly IApiService _apiService;
+        private readonly IJsonService _jsonService;
 
-        public HomeController(IApiService apiService, IJsonService jsonService, IQueryUnitOfWork queryUnitOfWork, IRepositoryFactory repositoryFactory)
+        public HomeController(IApiService apiService, IJsonService jsonService)
         {
             _apiService = apiService;
             _jsonService = jsonService;
-            _queryUnitOfWork =
-            _queryUnitOfWork = queryUnitOfWork;
-            _repositoryFactory = repositoryFactory;
         }
 
         public IActionResult Index()
@@ -40,6 +41,9 @@ namespace MvcUi.Controllers
 
         public IActionResult HQ()
         {
+            //Need to debug 2 at once.
+            var response =  GetApiData(@"http://localhost:50125/api/Models?entityTypeEnum=Classification");
+
             return View();
         }
 
@@ -67,6 +71,29 @@ namespace MvcUi.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private async Task<ApiModel> GetApiData(string endPoint)
+        {
+            try
+            {
+                var response = await _apiService.GetDataAsync(endPoint);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new ApiModel { ErrorMessage = "An error occcured", IsError = true };
+                }
+                else
+                {
+                    var asyncResult = response.Content.ReadAsStringAsync().Result;
+
+                    return new ApiModel { IsError = false, Response = _jsonService.ConvertJsonList<ModelModel>(asyncResult) };
+                }
+            }
+            catch (Exception exception)
+            {
+                return new ApiModel { ErrorMessage = "An error occcured", IsError = true };
+            }
         }
     }
 }
