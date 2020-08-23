@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Net.Http;
 using System.Threading.Tasks;
 using DataManager.Abstractions;
 using DataManager.Models;
@@ -14,8 +13,8 @@ namespace MvcUi.Controllers
 {
 
     /* 
-     * TO DO - Update Git Ignore.
-     * TO DO - use API project to get the data.
+     * TO DO - use API project to get where
+     * TO DO - setup logger.
      * TO DO - start dynamically adding items to the UI.
      * TO DO - Integrate security on API calls.
      * TO DO - Look at mentioned advanced features.

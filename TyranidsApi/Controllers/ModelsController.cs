@@ -36,5 +36,20 @@ namespace Api.Controllers
                 Content = new StringContent(JsonConvert.SerializeObject(items), Encoding.UTF8, WebTypes.Json)
             };
         }
+
+        [HttpGet]
+        public HttpResponseMessage GetAllModelsWhere(EntityTypeEnum entityTypeEnum, ModelsClassEnum classification)
+        {
+            var items = _repositoryFactory.Make(entityTypeEnum).GetAll(GlobalTypes.DbConnectionString, _queryUnitOfWork);
+            var noItems = !items.Any();
+
+            if (noItems)
+                return new HttpResponseMessage(HttpStatusCode.NoContent);
+
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JsonConvert.SerializeObject(items), Encoding.UTF8, WebTypes.Json)
+            };
+        }
     }
 }
