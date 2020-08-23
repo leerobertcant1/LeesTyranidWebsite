@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 using MvcUi.Models;
 using Tyranids.MvcUi.Models;
 using TyranidsApi.Abstractions;
-using TyranidsApi.Static_Values;
 
 namespace MvcUi.Controllers
 {
