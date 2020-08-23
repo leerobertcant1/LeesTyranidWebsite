@@ -18,10 +18,12 @@ DesignTimeBuild/
 v16/
 MvcUi/[Bb]in
 MvcUi/[Oo]bj/
-TyranidsData/[Bb]in
+TyranidsData/[Bb]in/
 TyranidsData/[Oo]bj/
-DataManager/[Bb]in
+DataManager/[Bb]in/
 DataManager/[Oo]bj/
+TyranidsApi[Bb]in/
+TyranidsApi[Oo]bj/
 
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
 !packages/*/build/
