@@ -5,13 +5,14 @@ using DataManager.Abstractions;
 using DataManager.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using MvcUi.Models;
+using Tyranids.MvcUi;
 using Tyranids.MvcUi.Models;
 using TyranidsApi.Abstractions;
 
 namespace MvcUi.Controllers
 {
-
     /* 
      * TO DO - use API project to get where
      * TO DO - setup logger.
@@ -20,15 +21,16 @@ namespace MvcUi.Controllers
      * TO DO - Look at mentioned advanced features.
      */
 
-
     public class HomeController : Controller
     {
         private readonly IApiService _apiService;
+        private readonly IConfiguration _configuration;
         private readonly IJsonService _jsonService;
 
-        public HomeController(IApiService apiService, IJsonService jsonService)
+        public HomeController(IApiService apiService, IConfiguration configuration, IJsonService jsonService)
         {
             _apiService = apiService;
+            _configuration = configuration;
             _jsonService = jsonService;
         }
 
@@ -37,10 +39,9 @@ namespace MvcUi.Controllers
             return View();
         }
 
-        public IActionResult HQ()
+        public async Task<IActionResult> HQ()
         {
-            //Need to debug 2 at once.
-            var response =  GetApiData(@"http://localhost:50125/api/Models?entityTypeEnum=Classification");
+            var response =  await GetApiData(GlobalStrings.ModelClassificationEndPointEnum);
 
             return View();
         }
@@ -75,12 +76,16 @@ namespace MvcUi.Controllers
         {
             try
             {
-                var response = await _apiService.GetDataAsync(endPoint);
+                var baseApiAddress = _configuration[GlobalStrings.LocalHostApiEndPoints];
+
+                if(string.IsNullOrEmpty(baseApiAddress))
+                    return new ApiModel { ErrorMessage = GlobalStrings.ErrorOccurred, IsError = true };
+
+                var fullEndpoint = $"{baseApiAddress}{endPoint}";
+                var response = await _apiService.GetDataAsync(fullEndpoint);
 
                 if (!response.IsSuccessStatusCode)
-                {
-                    return new ApiModel { ErrorMessage = "An error occcured", IsError = true };
-                }
+                    return new ApiModel { ErrorMessage = GlobalStrings.ErrorOccurred, IsError = true };
                 else
                 {
                     var asyncResult = response.Content.ReadAsStringAsync().Result;
