@@ -17,6 +17,7 @@ namespace MvcUi.Controllers
      * TO DO - use API project to get where
      * TO DO - setup logger.
      * TO DO - start dynamically adding items to the UI.
+     * TO DO - Refactor API data into a service
      * TO DO - Integrate security on API calls.
      * TO DO - Look at mentioned advanced features.
      */
@@ -41,7 +42,7 @@ namespace MvcUi.Controllers
 
         public async Task<IActionResult> HQ()
         {
-            var response =  await GetApiData(GlobalStrings.ModelClassificationEndPointEnum);
+            var apiData =  await GetApiData(GlobalStrings.ModelClassificationEndPointEnum);
 
             return View();
         }
