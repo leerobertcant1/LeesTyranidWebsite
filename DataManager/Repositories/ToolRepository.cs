@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using DataManager.Abstractions;
 using DataManager.Entities;
-using DataManager.Models;
 
 namespace DataManager.Repositories
 {
@@ -10,5 +8,8 @@ namespace DataManager.Repositories
     {
         public IEnumerable<ToolModel> GetAll(string connectionString, IQueryUnitOfWork queryUnitOfWork) =>
             queryUnitOfWork.LoadData<ToolModel>($"{GetAllFrom} {EntityTable.ToolEntity}", connectionString);
+
+        public IEnumerable<ToolModel> GetAllWhere(string whereClause, string connectionString, IQueryUnitOfWork queryUnitOfWork) =>
+            queryUnitOfWork.LoadData<ToolModel>($"{GetAllFrom} {EntityTable.ToolEntity} {whereClause}", connectionString);
     }
 }

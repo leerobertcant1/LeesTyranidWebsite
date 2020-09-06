@@ -8,5 +8,8 @@ namespace DataManager.Repositories
     {
         public IEnumerable<ClassificationModel> GetAll(string connectionString, IQueryUnitOfWork queryUnitOfWork) =>
             queryUnitOfWork.LoadData<ClassificationModel>($"{GetAllFrom} {EntityTable.ClassificationEntity}", connectionString);
+
+        public IEnumerable<ClassificationModel> GetAllWhere(string whereClause, string connectionString, IQueryUnitOfWork queryUnitOfWork) =>
+         queryUnitOfWork.LoadData<ClassificationModel>($"{GetAllFrom} {EntityTable.ClassificationEntity} {whereClause}", connectionString);
     }
 }

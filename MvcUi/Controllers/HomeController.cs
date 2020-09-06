@@ -19,6 +19,9 @@ namespace MvcUi.Controllers
      * TO DO - start dynamically adding items to the UI.
      * TO DO - Refactor API data into a service
      * TO DO - Integrate security on API calls.
+     * TO DO - Refactor Repositories into one, because common code.
+     * TO DO - Add more controllers for API end points and combine API endpoints code.
+     * TO DO  - Add security around end points and request limit, somehow?
      * TO DO - Look at mentioned advanced features.
      */
 
@@ -42,7 +45,12 @@ namespace MvcUi.Controllers
 
         public async Task<IActionResult> HQ()
         {
-            var apiData =  await GetApiData(GlobalStrings.ModelClassificationEndPointEnum);
+            var endpoint = $"{GlobalStrings.ModelEndpointRoute}{GlobalStrings.ModelClassificationEnum}HQ";
+
+            if (string.IsNullOrEmpty(endpoint))
+                return View();
+
+            var apiData =  await GetApiData(endpoint);
 
             return View();
         }

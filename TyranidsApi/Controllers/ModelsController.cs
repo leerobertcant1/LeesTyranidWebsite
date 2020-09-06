@@ -23,9 +23,9 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage GetAll(EntityTypeEnum entityTypeEnum)
+        public HttpResponseMessage GetAll()
         {
-            var items = _repositoryFactory.Make(entityTypeEnum).GetAll(GlobalTypes.DbConnectionString, _queryUnitOfWork);
+            var items = _repositoryFactory.Make(EntityTypeEnum.Model).GetAll(GlobalTypes.DbConnectionString, _queryUnitOfWork);
             var noItems = !items.Any();
 
             if (noItems)
@@ -38,9 +38,10 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage GetAllModelsWhere(EntityTypeEnum entityTypeEnum, ModelsClassEnum classification)
+        public HttpResponseMessage GetAllWhere(ModelsClassEnum classificationEnum)
         {
-            var items = _repositoryFactory.Make(entityTypeEnum).GetAll(GlobalTypes.DbConnectionString, _queryUnitOfWork);
+            var whereClause = $"Where ClassificationId = {(int) classificationEnum}";
+            var items = _repositoryFactory.Make(EntityTypeEnum.Model).GetAllWhere(whereClause, GlobalTypes.DbConnectionString, _queryUnitOfWork);
             var noItems = !items.Any();
 
             if (noItems)

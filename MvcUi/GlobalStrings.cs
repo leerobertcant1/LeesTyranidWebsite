@@ -4,6 +4,8 @@
     {
         public static string ErrorOccurred = "An error occcured";
         public static string LocalHostApiEndPoints = "ApiEndpoints:LocalHost";
-        public static string ModelClassificationEndPointEnum = "Models?entityTypeEnum=Classification";
+        public static string ModelEndpointRoute = "Models?";
+        public static string ModelClassificationEndPointEnum = "entityTypeEnum=";
+        public static string ModelClassificationEnum = "&classificationEnum=";
     }
 }
