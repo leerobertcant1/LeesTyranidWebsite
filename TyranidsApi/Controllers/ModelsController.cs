@@ -38,9 +38,9 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage GetAllWhere(ModelsClassEnum classificationEnum)
+        public HttpResponseMessage GetAllWhere(ModelsClassEnum modelsClassEnum)
         {
-            var whereClause = $"Where ClassificationId = {(int) classificationEnum}";
+            var whereClause = $"Where ClassificationId = {(int) modelsClassEnum}";
             var items = _repositoryFactory.Make(EntityTypeEnum.Model).GetAllWhere(whereClause, GlobalTypes.DbConnectionString, _queryUnitOfWork);
             var noItems = !items.Any();
 

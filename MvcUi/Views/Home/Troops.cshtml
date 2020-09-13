@@ -1,7 +1,12 @@
-﻿@{
-    ViewData["Title"] = "Troops";
-}
+﻿@model IEnumerable<DataManager.Models.ModelModel>;
 
 <div class="model-role-title">
-    <h2>@ViewData["Title"]</h2>
+    <h2>Troops units</h2>
 </div>
+
+@foreach (var item in Model)
+{
+    <p>
+        @item.Name
+    </p>
+}

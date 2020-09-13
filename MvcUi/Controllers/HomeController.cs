@@ -14,15 +14,34 @@ using TyranidsApi.Abstractions;
 namespace MvcUi.Controllers
 {
     /* 
-     * TO DO - use API project to get where
+     * TO DO - fix bool check on if empty list.
+     * TO DO - empty check around foreach no data.
+     * TO DO - add API and Db to gitignore.
      * TO DO - setup logger.
-     * TO DO - start dynamically adding items to the UI.
+     * TO DO - style the UI better 9 maybe don't show where none, etc.
      * TO DO - Refactor API data into a service
      * TO DO - Integrate security on API calls.
      * TO DO - Refactor Repositories into one, because common code.
+     * TO DO - Refactor into one .cshtml file perhaps.
+     * TO DO - implement login.
+     * TO DO - Add area where I can add the models myself and their associated image for Admin only.
+     * TO DO - Allow JPGs only with certain file limit.
      * TO DO - Add more controllers for API end points and combine API endpoints code.
-     * TO DO  - Add security around end points and request limit, somehow?
-     * TO DO - Look at mentioned advanced features.
+     * TO DO  -Add security around end points and request limit, somehow?
+     * TO DO - Change to Stored Procedures.
+     * TO DO - Add Unit Tests.
+     * TO DO - Add Integration Tests.
+     * TO DO - Look at ES6+ for JS functions.
+     * TO DO - Add empty DB data.
+     * TO DO - Deployment normal on Azure.
+     * TO DO - Deployment with Docker.
+     * TO DO - CICD process.
+     * TO DO - Look at changing to DDD.
+     * TO DO - Investigate GraphQL.
+     * TO DO - fill out empty DB data.
+     * TO DO - Look at Mobiles.
+     * TO DO - Look at .NETCore.
+     * TO DO - Look at PWA.
      */
 
     public class HomeController : Controller
@@ -45,40 +64,58 @@ namespace MvcUi.Controllers
 
         public async Task<IActionResult> HQ()
         {
-            var endpoint = $"{GlobalStrings.ModelEndpointRoute}{GlobalStrings.ModelClassificationEnum}HQ";
-
-            if (string.IsNullOrEmpty(endpoint))
-                return View();
-
+            var endpoint = GetModelClassificationString(GlobalStrings.ModelClassificationHQ);
             var apiData =  await GetApiData(endpoint);
+            var isNoApiData = apiData == null || apiData.Response == null || !apiData.Response.ToList().Count == 0;
 
-            return View();
+            return isNoApiData  ? View() : (IActionResult)View(apiData.Response);
         }
 
-        public IActionResult Troops()
+        public async Task<IActionResult> Troops()
         {
-            return View();
+            var endpoint = GetModelClassificationString(GlobalStrings.ModelClassificationTroops);
+            var apiData = await GetApiData(endpoint);
+            var isNoApiData = apiData == null || apiData.Response == null || !apiData.Response.Any();
+
+            return isNoApiData ? View() : (IActionResult)View(apiData.Response);
         }
 
-        public IActionResult Elites()
+        public async Task<IActionResult> Elites()
         {
-            return View();
+            var endpoint = GetModelClassificationString(GlobalStrings.ModelClassificationElites);
+            var apiData = await GetApiData(endpoint);
+            var isNoApiData = apiData == null || apiData.Response == null || !apiData.Response.Any();
+
+            return isNoApiData ? View() : (IActionResult)View(apiData.Response);
         }
 
-        public IActionResult FastAttack()
+        public async Task<IActionResult> FastAttack()
         {
-            return View();
+            var endpoint = GetModelClassificationString(GlobalStrings.ModelClassificationFastAttack);
+            var apiData = await GetApiData(endpoint);
+            var isNoApiData = apiData == null || apiData.Response == null || !apiData.Response.Any();
+
+            return isNoApiData ? View() : (IActionResult)View(apiData.Response);
         }
 
-        public IActionResult HeavySupport()
+        public async Task<IActionResult> HeavySupport()
         {
-            return View();
+            var endpoint = GetModelClassificationString(GlobalStrings.ModelClassificationHeavySupport);
+            var apiData = await GetApiData(endpoint);
+            var isNoApiData = apiData == null || apiData.Response == null || !apiData.Response.Any();
+
+            return isNoApiData ? View() : (IActionResult)View(apiData.Response);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private string GetModelClassificationString(string modelClass)
+        {
+            return $"{GlobalStrings.ModelEndpointRoute}{GlobalStrings.ModelClassificationEnum}{modelClass}";
         }
 
         private async Task<ApiModel> GetApiData(string endPoint)
