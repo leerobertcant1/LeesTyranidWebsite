@@ -23,6 +23,7 @@ namespace Api.Controllers
         }
 
         [HttpGet]
+        [Route("GetAll")]
         public HttpResponseMessage GetAll()
         {
             var items = _repositoryFactory.Make(EntityTypeEnum.Model).GetAll(GlobalTypes.DbConnectionString, _queryUnitOfWork);
@@ -38,6 +39,7 @@ namespace Api.Controllers
         }
 
         [HttpGet]
+        [Route("GetAllWhere")]
         public HttpResponseMessage GetAllWhere(ModelsClassEnum modelsClassEnum)
         {
             var whereClause = $"Where ClassificationId = {(int) modelsClassEnum}";

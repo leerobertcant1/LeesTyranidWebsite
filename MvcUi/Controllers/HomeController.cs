@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using DataManager.Abstractions;
 using DataManager.Models;
@@ -14,7 +16,7 @@ using TyranidsApi.Abstractions;
 namespace MvcUi.Controllers
 {
     /* 
-     * TO DO - fix bool check on if empty list.
+     * TO DO - fix bool check on if empty list - change to IEnumerable
      * TO DO - empty check around foreach no data.
      * TO DO - add API and Db to gitignore.
      * TO DO - setup logger.
@@ -66,9 +68,11 @@ namespace MvcUi.Controllers
         {
             var endpoint = GetModelClassificationString(GlobalStrings.ModelClassificationHQ);
             var apiData =  await GetApiData(endpoint);
-            var isNoApiData = apiData == null || apiData.Response == null || !apiData.Response.ToList().Count == 0;
+            IList<ModelModel> castedData = CastIList<ModelModel>(apiData.Response);
 
-            return isNoApiData  ? View() : (IActionResult)View(apiData.Response);
+            var isNoApiData = apiData == null || apiData.Response == null || castedData.Count == 0;
+
+            return isNoApiData  ? View() : (IActionResult)View(castedData);
         }
 
         public async Task<IActionResult> Troops()
@@ -113,9 +117,14 @@ namespace MvcUi.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        private IList<T> CastIList<T>(dynamic data)
+        {
+            return (data as IEnumerable<T>).Cast<T>().ToList();
+        }
+
         private string GetModelClassificationString(string modelClass)
         {
-            return $"{GlobalStrings.ModelEndpointRoute}{GlobalStrings.ModelClassificationEnum}{modelClass}";
+            return $"{GlobalStrings.ModelEndpointRoute}/{GlobalStrings.GetAllWhere}{GlobalStrings.ModelClassificationEnum}{modelClass}";
         }
 
         private async Task<ApiModel> GetApiData(string endPoint)

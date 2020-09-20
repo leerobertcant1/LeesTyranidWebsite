@@ -361,7 +361,6 @@ C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Microsoft.CodeDom.Prov
 C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Microsoft.Owin.xml
 C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Microsoft.Owin.Host.SystemWeb.xml
 C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Microsoft.Owin.Security.xml
-C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Microsoft.Owin.Security.Facebook.xml
 C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Microsoft.Owin.Security.Google.xml
 C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
@@ -404,3 +403,5 @@ C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\obj\Debug\Tyranids.Api.csp
 C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\obj\Debug\Tyranids.Api.csproj.CopyComplete
 C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\obj\Debug\Tyranids.Api.dll
 C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\obj\Debug\Tyranids.Api.pdb
+C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Microsoft.Owin.Security.Cookies.xml
