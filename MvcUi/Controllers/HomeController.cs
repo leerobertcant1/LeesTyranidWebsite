@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using DataManager.Abstractions;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MvcUi.Models;
+using Tyranids.BusinessLogic.Abstractions;
 using Tyranids.MvcUi;
 using Tyranids.MvcUi.Models;
 using TyranidsApi.Abstractions;
@@ -16,8 +18,7 @@ using TyranidsApi.Abstractions;
 namespace MvcUi.Controllers
 {
     /* 
-     * TO DO - add API and Db to gitignore.
-     * TO DO - setup logger.
+     * TO DO - implement logger in areas.
      * TO DO - style the UI better 9 maybe don't show where none, etc.
      * TO DO - Refactor API data into a service
      * TO DO - Integrate security on API calls.
@@ -49,12 +50,15 @@ namespace MvcUi.Controllers
         private readonly IApiService _apiService;
         private readonly IConfiguration _configuration;
         private readonly IJsonService _jsonService;
+        private readonly ISeriLoggerService _seriLoggerService;
 
-        public HomeController(IApiService apiService, IConfiguration configuration, IJsonService jsonService)
+        public HomeController(IApiService apiService, IConfiguration configuration, 
+            IJsonService jsonService, ISeriLoggerService seriLoggerService)
         {
             _apiService = apiService;
             _configuration = configuration;
             _jsonService = jsonService;
+            _seriLoggerService = seriLoggerService;
         }
 
         public IActionResult Index()
@@ -148,6 +152,8 @@ namespace MvcUi.Controllers
             }
             catch (Exception exception)
             {
+                _seriLoggerService.LogData(exception);
+
                 return new ApiModel { ErrorMessage = "An error occcured", IsError = true };
             }
         }

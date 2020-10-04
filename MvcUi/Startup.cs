@@ -15,6 +15,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Tyranids.BusinessLogic.Abstractions;
+using Tyranids.BusinessLogic.Services;
 using TyranidsApi.Abstractions;
 using TyranidsApi.Services;
 
@@ -56,6 +58,7 @@ namespace MvcUi
             services.AddScoped<IJsonService, JsonService>();
             services.AddScoped<IQueryUnitOfWork, QueryUnitOfWork>();
             services.AddScoped<IRepositoryFactory, RepositoryFactory>();
+            services.AddScoped<ISeriLoggerService, SeriLoggerService>();
 
             services.AddMvc();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
