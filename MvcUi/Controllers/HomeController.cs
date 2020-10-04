@@ -16,8 +16,6 @@ using TyranidsApi.Abstractions;
 namespace MvcUi.Controllers
 {
     /* 
-     * TO DO - fix bool check on if empty list - change to IEnumerable
-     * TO DO - empty check around foreach no data.
      * TO DO - add API and Db to gitignore.
      * TO DO - setup logger.
      * TO DO - style the UI better 9 maybe don't show where none, etc.

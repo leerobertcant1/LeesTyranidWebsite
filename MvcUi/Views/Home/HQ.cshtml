@@ -4,9 +4,18 @@
     <h2>HQ units</h2>
 </div>
 
-@foreach (var item in Model)
-{
-    <p>
-        @item.Name
-    </p>
-}
+<div>
+    @if (Model == null || !Model.Any())
+    {
+        <p>No units found</p>
+    }
+    else
+    {
+        @foreach (var item in Model)
+        {
+            <p>
+                @item.Name
+            </p>
+        }
+    }
+</div>
