@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using DataManager.Abstractions;
 using DataManager.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -18,17 +16,15 @@ using TyranidsApi.Abstractions;
 namespace MvcUi.Controllers
 {
     /* 
-     * TO DO - implement logger in areas.
-     * TO DO - style the UI better 9 maybe don't show where none, etc.
-     * TO DO - Refactor API data into a service
-     * TO DO - Integrate security on API calls.
+     * TO DO - Move all services into Business Logic.
+     * TO DO - Service Locator pattern.
      * TO DO - Refactor Repositories into one, because common code.
      * TO DO - Refactor into one .cshtml file perhaps.
      * TO DO - implement login.
      * TO DO - Add area where I can add the models myself and their associated image for Admin only.
      * TO DO - Allow JPGs only with certain file limit.
      * TO DO - Add more controllers for API end points and combine API endpoints code.
-     * TO DO  -Add security around end points and request limit, somehow?
+     * TO DO - Add security around end points and request limit, somehow?
      * TO DO - Change to Stored Procedures.
      * TO DO - Add Unit Tests.
      * TO DO - Add Integration Tests.
@@ -39,10 +35,6 @@ namespace MvcUi.Controllers
      * TO DO - CICD process.
      * TO DO - Look at changing to DDD.
      * TO DO - Investigate GraphQL.
-     * TO DO - fill out empty DB data.
-     * TO DO - Look at Mobiles.
-     * TO DO - Look at .NETCore.
-     * TO DO - Look at PWA.
      */
 
     public class HomeController : Controller
@@ -52,7 +44,8 @@ namespace MvcUi.Controllers
         private readonly IJsonService _jsonService;
         private readonly ISeriLoggerService _seriLoggerService;
 
-        public HomeController(IApiService apiService, IConfiguration configuration, 
+        public HomeController(
+            IApiService apiService, IConfiguration configuration, 
             IJsonService jsonService, ISeriLoggerService seriLoggerService)
         {
             _apiService = apiService;

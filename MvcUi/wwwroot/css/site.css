@@ -53,6 +53,10 @@ body {
     margin-top: 5%;
 }
 
+.footer-divider {
+     background-color: white;
+}
+
 .navbar-brand {
     color: white !important;
 }

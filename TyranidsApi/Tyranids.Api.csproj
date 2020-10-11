@@ -434,6 +434,10 @@
       <Project>{8cdb82ae-77fb-437b-b4d6-bac69e14ca56}</Project>
       <Name>Tyranids.DataManager</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tyranids.BusinessLogic\Tyranids.BusinessLogic.csproj">
+      <Project>{83b1e9ed-b5b9-48cd-a66a-53109b14582f}</Project>
+      <Name>Tyranids.BusinessLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

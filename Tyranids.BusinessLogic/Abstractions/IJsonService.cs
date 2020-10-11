@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace DataManager.Abstractions
+namespace Tyranids.BusinessLogic.Abstractions
 {
-   public interface IJsonService
+    public interface IJsonService
     {
         IEnumerable<T> ConvertJsonList<T>(string json);
     }

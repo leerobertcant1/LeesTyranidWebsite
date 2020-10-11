@@ -55,7 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstractions\IJsonService.cs" />
     <Compile Include="Abstractions\IRepository.cs" />
     <Compile Include="Abstractions\IRepositoryFactory.cs" />
     <Compile Include="Entities\BaseEntityTable.cs" />
@@ -84,7 +83,6 @@
     <Compile Include="Models\TechniqueModel.cs" />
     <Compile Include="Models\ToolModel.cs" />
     <Compile Include="Queries\QuerySyntax.cs" />
-    <Compile Include="Services\JsonService.cs" />
     <Compile Include="Unit Of Work\Query\QueryUnitOfWork.cs" />
     <Compile Include="Abstractions\IQueryUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

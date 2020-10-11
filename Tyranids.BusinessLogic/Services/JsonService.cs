@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using DataManager.Abstractions;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 using System.Linq;
+using Tyranids.BusinessLogic.Abstractions;
 
-namespace DataManager.Services
+namespace Tyranids.BusinessLogic.Services
 {
     public class JsonService : IJsonService
     {
