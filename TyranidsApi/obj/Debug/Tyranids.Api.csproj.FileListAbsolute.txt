@@ -403,5 +403,8 @@ C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\obj\Debug\Tyranids.Api.csp
 C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\obj\Debug\Tyranids.Api.csproj.CopyComplete
 C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\obj\Debug\Tyranids.Api.dll
 C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\obj\Debug\Tyranids.Api.pdb
-C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Microsoft.Owin.Security.Cookies.dll
 C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Tyranids.BusinessLogic.dll
+C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Tyranids.BusinessLogic.pdb
+C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Tyranids.Globals.dll
+C:\Github Repositories\LeesTyranidWebsite\TyranidsApi\bin\Tyranids.Globals.pdb

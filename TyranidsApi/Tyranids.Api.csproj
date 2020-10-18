@@ -261,7 +261,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstractions\IApiService.cs" />
     <Compile Include="App_Start\AuthorizationOperationFilter.cs" />
     <Compile Include="App_Start\AuthTokenOperation.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -305,12 +304,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
-    <Compile Include="Services\ApiService.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Static Values\ApiEndpoints.cs" />
-    <Compile Include="Static Values\ApiQueryParams.cs" />
-    <Compile Include="Static Values\GlobalTypes.cs" />
-    <Compile Include="Static Values\WebTypes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -433,6 +427,10 @@
     <ProjectReference Include="..\DataManager\Tyranids.DataManager.csproj">
       <Project>{8cdb82ae-77fb-437b-b4d6-bac69e14ca56}</Project>
       <Name>Tyranids.DataManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Globals\Tyranids.Globals.csproj">
+      <Project>{2158FC05-5758-499F-B5E1-29D4BC52015F}</Project>
+      <Name>Tyranids.Globals</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tyranids.BusinessLogic\Tyranids.BusinessLogic.csproj">
       <Project>{83b1e9ed-b5b9-48cd-a66a-53109b14582f}</Project>

@@ -1,4 +1,4 @@
-﻿namespace Api.Static_Values
+﻿namespace Globals
 {
     public static class WebTypes
     {

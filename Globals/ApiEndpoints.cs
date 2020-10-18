@@ -1,4 +1,4 @@
-﻿namespace TyranidsApi.Static_Values
+﻿namespace Tyranids.Globals
 {
     public static class ApiEndpoints
     {

@@ -1,6 +1,6 @@
-﻿namespace Tyranids.MvcUi
+﻿namespace Tyranids.Globals
 {
-    public static class GlobalStrings
+    public class GlobalStrings
     {
         public static string ErrorOccurred = "An error occcured";
         public static string GetAll = "GetAll?";
@@ -10,7 +10,7 @@
         public static string ModelClassificationFastAttack = "FastAttack";
         public static string ModelClassificationEnum = "modelsClassEnum=";
         public static string ModelClassificationHeavySupport = "HeavySupport";
-        public static string ModelClassificationHQ = "HQ";   
+        public static string ModelClassificationHQ = "HQ";
         public static string ModelClassificationTroops = "Troops";
         public static string ModelEndpointRoute = "Models";
         public static string LocalHostApiEndPoints = "ApiEndpoints:LocalHost";

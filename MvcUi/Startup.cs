@@ -10,8 +10,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tyranids.BusinessLogic.Abstractions;
 using Tyranids.BusinessLogic.Services;
-using TyranidsApi.Abstractions;
-using TyranidsApi.Services;
 
 namespace MvcUi
 {
@@ -23,7 +21,7 @@ namespace MvcUi
 
             var builder = new ConfigurationBuilder()
              .SetBasePath(Directory.GetCurrentDirectory())
-             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+             .AddJsonFile($"appsettings.json", optional: false, reloadOnChange: true)
              .AddJsonFile($"appsettings.json", optional: true, reloadOnChange: true)
              .AddEnvironmentVariables();
 

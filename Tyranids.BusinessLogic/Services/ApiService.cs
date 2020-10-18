@@ -1,13 +1,12 @@
-﻿using Api.Static_Values;
-using System;
+﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using TyranidsApi.Abstractions;
+using Tyranids.BusinessLogic.Abstractions;
 
-namespace TyranidsApi.Services
+namespace Tyranids.BusinessLogic.Services
 {
-    public class ApiService: IApiService
+    public class ApiService : IApiService
     {
         public async Task<HttpResponseMessage> GetDataAsync(string endPoint)
         {
@@ -15,10 +14,11 @@ namespace TyranidsApi.Services
             {
                 client.BaseAddress = new Uri(endPoint);
                 client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(WebTypes.Json));
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                return  await client.GetAsync(endPoint);
+                return await client.GetAsync(endPoint);
             }
         }
     }
+
 }

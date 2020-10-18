@@ -9,15 +9,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MvcUi.Models;
 using Tyranids.BusinessLogic.Abstractions;
-using Tyranids.MvcUi;
+using Tyranids.Globals;
 using Tyranids.MvcUi.Models;
-using TyranidsApi.Abstractions;
 
 namespace MvcUi.Controllers
 {
     /* 
-     * TO DO - Move all services into Business Logic.
-     * TO DO - Service Locator pattern.
+     * TO DO - Service Locator pattern for the services.
      * TO DO - Refactor Repositories into one, because common code.
      * TO DO - Refactor into one .cshtml file perhaps.
      * TO DO - implement login.
