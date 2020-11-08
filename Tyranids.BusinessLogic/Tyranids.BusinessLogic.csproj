@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Globals\Tyranids.Globals.csproj" />
     <ProjectReference Include="..\TyranidsData\Tyranids.Data.sqlproj" />
   </ItemGroup>
 

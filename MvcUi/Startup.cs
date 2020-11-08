@@ -50,6 +50,7 @@ namespace MvcUi
             services.AddScoped<IQueryUnitOfWork, QueryUnitOfWork>();
             services.AddScoped<IRepositoryFactory, RepositoryFactory>();
             services.AddScoped<ISeriLoggerService, SeriLoggerService>();
+            services.AddScoped<IServiceLocator, ServiceLocator>();
 
             services.AddMvc();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

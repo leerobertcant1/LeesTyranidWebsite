@@ -15,8 +15,8 @@ using Tyranids.MvcUi.Models;
 namespace MvcUi.Controllers
 {
     /* 
-     * TO DO - Service Locator pattern for the services.
      * TO DO - Refactor Repositories into one, because common code.
+     * TO DO - Refactor this class into API Data Service.
      * TO DO - Refactor into one .cshtml file perhaps.
      * TO DO - implement login.
      * TO DO - Add area where I can add the models myself and their associated image for Admin only.
@@ -42,14 +42,12 @@ namespace MvcUi.Controllers
         private readonly IJsonService _jsonService;
         private readonly ISeriLoggerService _seriLoggerService;
 
-        public HomeController(
-            IApiService apiService, IConfiguration configuration, 
-            IJsonService jsonService, ISeriLoggerService seriLoggerService)
+        public HomeController(IConfiguration configuration, IServiceLocator serviceLocator)
         {
-            _apiService = apiService;
+            _apiService = serviceLocator.Get<IApiService>();
             _configuration = configuration;
-            _jsonService = jsonService;
-            _seriLoggerService = seriLoggerService;
+            _jsonService = serviceLocator.Get<IJsonService>();
+            _seriLoggerService = serviceLocator.Get<ISeriLoggerService>();
         }
 
         public IActionResult Index()

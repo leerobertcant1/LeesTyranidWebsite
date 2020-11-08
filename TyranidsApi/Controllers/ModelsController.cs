@@ -1,5 +1,7 @@
 ﻿using DataManager.Abstractions;
 using DataManager.Enums;
+using DataManager.Models;
+using DataManager.Repositories;
 using Globals;
 using Newtonsoft.Json;
 using System.Linq;
@@ -43,8 +45,10 @@ namespace Api.Controllers
         [Route("GetAllWhere")]
         public HttpResponseMessage GetAllWhere(ModelsClassEnum modelsClassEnum)
         {
-            var whereClause = $"Where ClassificationId = {(int) modelsClassEnum}";
-            var items = _repositoryFactory.Make(EntityTypeEnum.Model).GetAllWhere(whereClause, GlobalTypes.DbConnectionString, _queryUnitOfWork);
+            var whereClause = $"Where ClassificationId = {(int)modelsClassEnum}";
+
+            var repository = new Repository<ModelModel>();
+            var items = repository.GetAllWhere(whereClause, GlobalTypes.DbConnectionString, _queryUnitOfWork);
             var noItems = !items.Any();
 
             if (noItems)
