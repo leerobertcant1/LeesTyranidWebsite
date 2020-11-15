@@ -61,7 +61,6 @@
     <Compile Include="Enums\EntityTypeEnum.cs" />
     <Compile Include="Enums\ModelsClassEnum.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
-    <Compile Include="Factories\RepositoryFactory.cs" />
     <Compile Include="Models\ClassificationModel.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Entities\EntityTable.cs" />

@@ -1,5 +1,4 @@
 ﻿using DataManager.Queries;
-
 namespace DataManager.Repositories
 {
     public class BaseRepository

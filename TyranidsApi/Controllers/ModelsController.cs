@@ -16,20 +16,20 @@ namespace Api.Controllers
     [RoutePrefix("api/models")]
     public class ModelsController : ApiController
     {
-        private IQueryUnitOfWork _queryUnitOfWork;
-        private IRepositoryFactory _repositoryFactory;
+        private readonly IQueryUnitOfWork _queryUnitOfWork;
+        private readonly IRepository<ModelModel> _repository;
 
-        public ModelsController(IQueryUnitOfWork queryUnitOfWork, IRepositoryFactory repositoryFactory)
+        public ModelsController(IQueryUnitOfWork queryUnitOfWork, IRepository<ModelModel> repository)
         {
             _queryUnitOfWork = queryUnitOfWork;
-            _repositoryFactory = repositoryFactory;
+            _repository = repository;
         }
 
         [HttpGet]
         [Route("GetAll")]
         public HttpResponseMessage GetAll()
         {
-            var items = _repositoryFactory.Make(EntityTypeEnum.Model).GetAll(GlobalTypes.DbConnectionString, _queryUnitOfWork);
+            var items = _repository.GetAll(GlobalTypes.DbConnectionString, _queryUnitOfWork);
             var noItems = !items.Any();
 
             if (noItems)
@@ -45,10 +45,9 @@ namespace Api.Controllers
         [Route("GetAllWhere")]
         public HttpResponseMessage GetAllWhere(ModelsClassEnum modelsClassEnum)
         {
-            var whereClause = $"Where ClassificationId = {(int)modelsClassEnum}";
+            var whereClause = $"Where ClassificationId = { (int) modelsClassEnum }";
 
-            var repository = new Repository<ModelModel>();
-            var items = repository.GetAllWhere(whereClause, GlobalTypes.DbConnectionString, _queryUnitOfWork);
+            var items = _repository.GetAllWhere(whereClause, GlobalTypes.DbConnectionString, _queryUnitOfWork);
             var noItems = !items.Any();
 
             if (noItems)

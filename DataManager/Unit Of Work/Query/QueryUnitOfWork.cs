@@ -10,6 +10,11 @@ namespace DataManager.Unit_Of_Work.Query
     {
         public IEnumerable<T> LoadData<T>(string query, string connectionString)
         {
+            if(string.IsNullOrEmpty(query) || string.IsNullOrEmpty(connectionString))
+            {
+                return null;
+            }
+
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();

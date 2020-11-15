@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,15 +8,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MvcUi.Models;
 using Tyranids.BusinessLogic.Abstractions;
+using Tyranids.BusinessLogic.Models;
 using Tyranids.Globals;
-using Tyranids.MvcUi.Models;
 
 namespace MvcUi.Controllers
 {
     /* 
-     * TO DO - Refactor Repositories into one, because common code.
-     * TO DO - Refactor this class into API Data Service.
+     * TO DO - Circular reference fix for ApiDataService
      * TO DO - Refactor into one .cshtml file perhaps.
+     * To DO - Refactor private functions.
      * TO DO - implement login.
      * TO DO - Add area where I can add the models myself and their associated image for Admin only.
      * TO DO - Allow JPGs only with certain file limit.
@@ -37,17 +36,13 @@ namespace MvcUi.Controllers
 
     public class HomeController : Controller
     {
-        private readonly IApiService _apiService;
+        private readonly IApiDataService _apiDataService;
         private readonly IConfiguration _configuration;
-        private readonly IJsonService _jsonService;
-        private readonly ISeriLoggerService _seriLoggerService;
 
         public HomeController(IConfiguration configuration, IServiceLocator serviceLocator)
         {
-            _apiService = serviceLocator.Get<IApiService>();
+            _apiDataService = serviceLocator.Get<IApiDataService>();
             _configuration = configuration;
-            _jsonService = serviceLocator.Get<IJsonService>();
-            _seriLoggerService = serviceLocator.Get<ISeriLoggerService>();
         }
 
         public IActionResult Index()
@@ -120,31 +115,16 @@ namespace MvcUi.Controllers
 
         private async Task<ApiModel> GetApiData(string endPoint)
         {
-            try
-            {
-                var baseApiAddress = _configuration[GlobalStrings.LocalHostApiEndPoints];
+            var baseApiAddress = _configuration[GlobalStrings.LocalHostApiEndPoints];
 
-                if(string.IsNullOrEmpty(baseApiAddress))
-                    return new ApiModel { ErrorMessage = GlobalStrings.ErrorOccurred, IsError = true };
+            if(string.IsNullOrEmpty(baseApiAddress))
+                return new ApiModel { ErrorMessage = GlobalStrings.ErrorOccurred, IsError = true };
 
-                var fullEndpoint = $"{baseApiAddress}{endPoint}";
-                var response = await _apiService.GetDataAsync(fullEndpoint);
+            var fullEndpoint = $"{baseApiAddress}{endPoint}";
 
-                if (!response.IsSuccessStatusCode)
-                    return new ApiModel { ErrorMessage = GlobalStrings.ErrorOccurred, IsError = true };
-                else
-                {
-                    var asyncResult = response.Content.ReadAsStringAsync().Result;
+            return await _apiDataService.GetApiData(fullEndpoint);
 
-                    return new ApiModel { IsError = false, Response = _jsonService.ConvertJsonList<ModelModel>(asyncResult) };
-                }
-            }
-            catch (Exception exception)
-            {
-                _seriLoggerService.LogData(exception);
 
-                return new ApiModel { ErrorMessage = "An error occcured", IsError = true };
-            }
         }
     }
 }

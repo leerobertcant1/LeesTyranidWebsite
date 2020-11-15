@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using DataManager.Abstractions;
-using DataManager.Factories;
+using DataManager.Models;
+using DataManager.Repositories;
 using DataManager.Unit_Of_Work.Query;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -48,7 +49,7 @@ namespace MvcUi
             services.AddScoped<IApiService, ApiService>();
             services.AddScoped<IJsonService, JsonService>();
             services.AddScoped<IQueryUnitOfWork, QueryUnitOfWork>();
-            services.AddScoped<IRepositoryFactory, RepositoryFactory>();
+            services.AddScoped<IRepository<ModelModel>, Repository<ModelModel>>();
             services.AddScoped<ISeriLoggerService, SeriLoggerService>();
             services.AddScoped<IServiceLocator, ServiceLocator>();
 

@@ -1,6 +1,7 @@
 ﻿using System.Web.Http;
 using DataManager.Abstractions;
-using DataManager.Factories;
+using DataManager.Models;
+using DataManager.Repositories;
 using DataManager.Unit_Of_Work.Query;
 using Microsoft.Practices.Unity;
 using Unity.WebApi;
@@ -27,7 +28,8 @@ namespace DataManager
             var container = new UnityContainer();
 
             container.RegisterType<IQueryUnitOfWork, QueryUnitOfWork>();
-            container.RegisterType<IRepositoryFactory, RepositoryFactory>();
+            container.RegisterType<IRepository<ModelModel>, Repository<ModelModel>>();
+
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
