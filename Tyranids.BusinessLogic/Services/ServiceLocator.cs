@@ -27,7 +27,6 @@ namespace Tyranids.BusinessLogic.Services
         {
             return new Dictionary<object, object> 
             {
-                { typeof(IApiDataService), new ApiDataService(new ServiceLocator()) },
                 { typeof(IApiService), new ApiService() },
                 { typeof(IJsonService), new JsonService() },
                 { typeof(ISeriLoggerService), new SeriLoggerService() }

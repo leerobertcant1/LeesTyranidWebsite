@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyranids.Api", "TyranidsApi
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Tyranids.Data", "TyranidsData\Tyranids.Data.sqlproj", "{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfUI", "TyranidsWpfUI\WpfUI.csproj", "{DC951342-3E75-4135-877E-2685F2999BA4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyranids.Tests", "TyranidsTest\Tyranids.Tests.csproj", "{71C45497-7CC7-4B04-A8B1-70B589922FDF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyranids.DataManager", "DataManager\Tyranids.DataManager.csproj", "{8CDB82AE-77FB-437B-B4D6-BAC69E14CA56}"
@@ -17,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tyranids.MvcUi", "MvcUi\Tyr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tyranids.BusinessLogic", "Tyranids.BusinessLogic\Tyranids.BusinessLogic.csproj", "{83B1E9ED-B5B9-48CD-A66A-53109B14582F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyranids.Globals", "Globals\Tyranids.Globals.csproj", "{2158FC05-5758-499F-B5E1-29D4BC52015F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tyranids.Globals", "Globals\Tyranids.Globals.csproj", "{2158FC05-5758-499F-B5E1-29D4BC52015F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4DB63F0F-F0D1-4BF9-9DFF-B8D1F12FECFF}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{DC951342-3E75-4135-877E-2685F2999BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC951342-3E75-4135-877E-2685F2999BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC951342-3E75-4135-877E-2685F2999BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC951342-3E75-4135-877E-2685F2999BA4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{71C45497-7CC7-4B04-A8B1-70B589922FDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{71C45497-7CC7-4B04-A8B1-70B589922FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71C45497-7CC7-4B04-A8B1-70B589922FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU

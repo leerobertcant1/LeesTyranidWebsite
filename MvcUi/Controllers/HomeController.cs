@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,8 +15,7 @@ using Tyranids.Globals;
 namespace MvcUi.Controllers
 {
     /* 
-     * TO DO - Circular reference fix for ApiDataService
-     * TO DO - Refactor into one .cshtml file perhaps.
+     * TO DO - Refactor into one .cshtml file perhaps - started.
      * To DO - Refactor private functions.
      * TO DO - implement login.
      * TO DO - Add area where I can add the models myself and their associated image for Admin only.
@@ -36,13 +36,17 @@ namespace MvcUi.Controllers
 
     public class HomeController : Controller
     {
-        private readonly IApiDataService _apiDataService;
         private readonly IConfiguration _configuration;
+        private readonly IApiService _apiService;
+        private readonly IJsonService _jsonService;
+        private readonly ISeriLoggerService _seriLoggerService;
 
         public HomeController(IConfiguration configuration, IServiceLocator serviceLocator)
         {
-            _apiDataService = serviceLocator.Get<IApiDataService>();
             _configuration = configuration;
+            _apiService = serviceLocator.Get<IApiService>();
+            _jsonService = serviceLocator.Get<IJsonService>();
+            _seriLoggerService = serviceLocator.Get<ISeriLoggerService>();
         }
 
         public IActionResult Index()
@@ -103,6 +107,29 @@ namespace MvcUi.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        private async Task<ApiModel> GetApiData(string endPoint)
+        {
+            try
+            {
+                var response = await _apiService.GetDataAsync(endPoint);
+
+                if (!response.IsSuccessStatusCode)
+                    return new ApiModel { ErrorMessage = GlobalStrings.ErrorOccurred, IsError = true };
+                else
+                {
+                    var asyncResult = response.Content.ReadAsStringAsync().Result;
+
+                    return new ApiModel { IsError = false, Response = _jsonService.ConvertJsonList<ModelModel>(asyncResult) };
+                }
+            }
+            catch (Exception exception)
+            {
+                _seriLoggerService.LogData(exception);
+
+                return new ApiModel { ErrorMessage = "An error occcured", IsError = true };
+            }
+        }
+
         private IList<T> CastIList<T>(dynamic data)
         {
             return (data as IEnumerable<T>).Cast<T>().ToList();
@@ -110,21 +137,10 @@ namespace MvcUi.Controllers
 
         private string GetModelClassificationString(string modelClass)
         {
-            return $"{GlobalStrings.ModelEndpointRoute}/{GlobalStrings.GetAllWhere}{GlobalStrings.ModelClassificationEnum}{modelClass}";
+            return $"{GlobalStrings.DebugHomeApiDomain}/" +
+                   $"{GlobalStrings.ModelEndpointRoute}/" +
+                   $"{GlobalStrings.GetAllWhere}{GlobalStrings.ModelClassificationEnum}{modelClass}";
         }
 
-        private async Task<ApiModel> GetApiData(string endPoint)
-        {
-            var baseApiAddress = _configuration[GlobalStrings.LocalHostApiEndPoints];
-
-            if(string.IsNullOrEmpty(baseApiAddress))
-                return new ApiModel { ErrorMessage = GlobalStrings.ErrorOccurred, IsError = true };
-
-            var fullEndpoint = $"{baseApiAddress}{endPoint}";
-
-            return await _apiDataService.GetApiData(fullEndpoint);
-
-
-        }
     }
 }

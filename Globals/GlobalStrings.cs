@@ -2,7 +2,8 @@
 {
     public class GlobalStrings
     {
-        public static string ErrorOccurred = "An error occcured";
+        public static string DebugHomeApiDomain = "http://localhost:50125/api";
+        public static string ErrorOccurred = "An error occured";
         public static string GetAll = "GetAll?";
         public static string GetAllWhere = "GetAllWhere?";
         public static string ModelClassificationElites = "Elites";
