@@ -46,12 +46,12 @@ namespace MvcUi
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddScoped<IApiDataService, ApiDataService>();
             services.AddScoped<IApiService, ApiService>();
             services.AddScoped<IJsonService, JsonService>();
             services.AddScoped<IQueryUnitOfWork, QueryUnitOfWork>();
             services.AddScoped<IRepository<ModelModel>, Repository<ModelModel>>();
             services.AddScoped<ISeriLoggerService, SeriLoggerService>();
-            services.AddScoped<IServiceLocator, ServiceLocator>();
 
             services.AddMvc();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

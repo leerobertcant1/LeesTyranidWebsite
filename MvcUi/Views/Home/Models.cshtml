@@ -1,17 +1,17 @@
-﻿@model IEnumerable<DataManager.Models.ModelModel>;
+﻿@model Tyranids.MvcUi.Models.ModelsViewModel;
 
 <div class="model-role-title">
-    <h2>HQ units</h2>
+    <h2>@Model.Type units</h2>
 </div>
 
 <div>
-    @if (Model == null || !Model.Any())
+    @if (Model.Models == null || !Model.Models.Any())
     {
         <p>No units found</p>
     }
     else
     {
-        @foreach (var item in Model)
+        @foreach (var item in Model.Models)
         {
             <p>
                 @item.Name
