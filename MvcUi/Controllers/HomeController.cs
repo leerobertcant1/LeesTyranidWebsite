@@ -13,7 +13,9 @@ using Tyranids.MvcUi.Models;
 namespace MvcUi.Controllers
 {
     /* 
-     * TO DO - implement login.
+     * TO DO - Implement Login Identity with ASP.NET Core.
+     * TO DO - Divide all areas into controllers (Models).
+     * TO DO - API change homepage.
      * TO DO - Add area where I can add the models myself and their associated image for Admin only.
      * TO DO - Allow JPGs only with certain file limit.
      * TO DO - Add more controllers for API end points and combine API endpoints code.

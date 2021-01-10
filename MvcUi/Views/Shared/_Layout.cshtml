@@ -29,11 +29,14 @@
         <div class="container">
             <div class="navbar-header" id="navbarHeader">
                 <a class="navbar-brand" id="navbarHome" href="/" onclick="setNavBarCss(this.id)">Home</a>
-                <a class="navbar-item" id="navbarHQ" href="@Url.Action("Models", "Home", new { type = "HQ" } )")" onclick="setNavBarCss(this.id)">HQ</a>
+                <a class="navbar-item" id="navbarHQ" href="@Url.Action("Models", "Home", new { type = "HQ" } )" )" onclick="setNavBarCss(this.id)">HQ</a>
                 <a class="navbar-item" id="navbarElites" href="@Url.Action("Models", "Home", new { type = "Elites" })" onclick="setNavBarCss(this.id)">Elites</a>
                 <a class="navbar-item" id="navbarTroops" href="@Url.Action("Models", "Home", new { type = "Troops" })" onclick="setNavBarCss(this.id)">Troops</a>
                 <a class="navbar-item" id="navbarFastAttack" href="@Url.Action("Models", "Home" , new { type = "FastAttack" })" onclick="setNavBarCss(this.id)">Fast Attack</a>
                 <a class="navbar-item" id="navbarHeavySupport" href="@Url.Action("Models", "Home", new { type = "HeavySupport" })" onclick="setNavBarCss(this.id)">Heavy Support</a>
+            </div>
+            <div class="navbar-header-login">
+                <a class="navbar-item" id="userLogin" href="@Url.Action("Login", "User")" onclick="setNavBarCss(this.id)">Login</a>
             </div>
         </div>
     </nav>

@@ -34,6 +34,12 @@ body {
     padding: 0;
 }
 
+.btn-authenticate {
+    color: #fff;
+    background-color: #00b359;
+    border-color: #00b359;
+}
+
 #cookieConsent {
     display: none;
 }
@@ -49,12 +55,20 @@ body {
     margin-top: 5%;
 }
 
-.model-role-title {
+.footer-divider {
+    background-color: white;
+}
+
+.general-title, .login-title {
+    color: #008000;
+}
+
+.login-general-section, .model-role-title {
     margin-top: 5%;
 }
 
-.footer-divider {
-     background-color: white;
+.login-password-section{
+    margin-top: 2%;
 }
 
 .navbar-brand {
@@ -73,6 +87,11 @@ body {
     color: white;
 }
 
+.navbar-header-login {
+    position: absolute;
+    right: 5%;
+}
+
 #navbarHome {
     color: greenyellow !important;
 }
@@ -81,11 +100,7 @@ body {
     background-color: #1f7a72;
 }
 
-.general-title {
-    color: #008000;
-}
-
-.paragraph-text{
+.paragraph-text {
     font-family: Arial;
     font-size: 1.2em;
 }
