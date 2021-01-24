@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Tyranids.BusinessLogic.Abstractions;
+using Tyranids.Globals;
 
 namespace Tyranids.BusinessLogic.Services
 {
@@ -14,7 +15,7 @@ namespace Tyranids.BusinessLogic.Services
             {
                 client.BaseAddress = new Uri(endPoint);
                 client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(GlobalStrings.ApplicationJson));
 
                 return await client.GetAsync(endPoint);
             }

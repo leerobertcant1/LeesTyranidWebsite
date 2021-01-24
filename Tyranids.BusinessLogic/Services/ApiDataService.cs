@@ -27,7 +27,9 @@ namespace Tyranids.BusinessLogic.Services
                 var response = await _apiService.GetDataAsync(endPoint);
 
                 if (!response.IsSuccessStatusCode)
+                {
                     return new ApiModel { ErrorMessage = GlobalStrings.ErrorOccurred, IsError = true };
+                }                 
                 else
                 {
                     var asyncResult = response.Content.ReadAsStringAsync().Result;

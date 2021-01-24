@@ -33,8 +33,10 @@ namespace Api.Controllers
             var noItems = !items.Any();
 
             if (noItems)
+            {
                 return new HttpResponseMessage(HttpStatusCode.NoContent);
-
+            }
+              
             return new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new StringContent(JsonConvert.SerializeObject(items), Encoding.UTF8, WebTypes.Json)

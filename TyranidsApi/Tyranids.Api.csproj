@@ -297,6 +297,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\IdentityController.cs" />
     <Compile Include="Views\Bootstrapper.cs" />
     <Compile Include="Controllers\ModelsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -405,6 +406,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Providers\" />
+    <Folder Include="Views\Identity\" />
     <Folder Include="Views\Models\" />
   </ItemGroup>
   <ItemGroup>

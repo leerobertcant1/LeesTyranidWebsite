@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Threading.Tasks;
 using DataManager.Models;
 using Microsoft.AspNetCore.Http;
@@ -13,8 +12,10 @@ using Tyranids.MvcUi.Models;
 namespace MvcUi.Controllers
 {
     /* 
-     * TO DO - Implement Login Identity with ASP.NET Core.
+     * TO DO - Implement Login Identity with ASP.NET Core - Started Identity Repo up to Api level (https://docs.microsoft.com/en-us/aspnet/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project)
      * TO DO - Divide all areas into controllers (Models).
+     * TO DO - Redo Unit of Work, implemented wrong.
+     * TO DO - Add Automapper to map objects.
      * TO DO - API change homepage.
      * TO DO - Add area where I can add the models myself and their associated image for Admin only.
      * TO DO - Allow JPGs only with certain file limit.

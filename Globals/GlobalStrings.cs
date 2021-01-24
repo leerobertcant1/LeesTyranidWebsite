@@ -2,6 +2,7 @@
 {
     public class GlobalStrings
     {
+        public static string ApplicationJson = "application/json";
         public static string DebugHomeApiDomain = "http://localhost:50125/api";
         public static string ErrorOccurred = "An error occured";
         public static string GetAll = "GetAll?";

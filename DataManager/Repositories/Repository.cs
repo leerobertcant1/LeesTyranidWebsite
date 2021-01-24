@@ -7,12 +7,17 @@ namespace DataManager.Repositories
 {
     public class Repository<T> : BaseRepository, IRepository<T>
     {
-        public IEnumerable<T> GetAll(string connectionString, IQueryUnitOfWork queryUnitOfWork) =>
-               queryUnitOfWork.LoadData<T>($"{ GetAllFrom } { GetEntity() }", connectionString);
+        public IEnumerable<T> GetAll(string connectionString, IQueryUnitOfWork queryUnitOfWork)
+        {
+            return queryUnitOfWork.LoadData<T>($"{ GetAllFrom } { GetEntity() }", connectionString);
+        }
+     
 
-        public IEnumerable<T> GetAllWhere(string whereClause, string connectionString, IQueryUnitOfWork queryUnitOfWork) =>
-             queryUnitOfWork.LoadData<T>($"{ GetAllFrom } { GetEntity() } { whereClause }", connectionString);
-
+        public IEnumerable<T> GetAllWhere(string whereClause, string connectionString, IQueryUnitOfWork queryUnitOfWork)
+        {
+            return queryUnitOfWork.LoadData<T>($"{ GetAllFrom } { GetEntity() } { whereClause }", connectionString); ;
+        }
+             
         private string GetEntity()
         {
             var modelType = typeof(T);
