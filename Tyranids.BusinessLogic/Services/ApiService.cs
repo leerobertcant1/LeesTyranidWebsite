@@ -20,6 +20,17 @@ namespace Tyranids.BusinessLogic.Services
                 return await client.GetAsync(endPoint);
             }
         }
-    }
 
+        public async Task<HttpResponseMessage> PostDataAsync(string endPoint, HttpContent content)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(endPoint);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(GlobalStrings.ApplicationJson));
+
+                return await client.PostAsync(endPoint, content);
+            }
+        }
+    }
 }

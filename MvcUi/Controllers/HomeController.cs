@@ -13,10 +13,12 @@ namespace MvcUi.Controllers
 {
     /* 
      * TO DO - Implement Login Identity with ASP.NET Core - Started Identity Repo up to Api level (https://docs.microsoft.com/en-us/aspnet/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project)
+     * TO DO - Add CRSF around CreateUser.cshtml and endpoint to register
      * TO DO - Divide all areas into controllers (Models).
      * TO DO - Redo Unit of Work, implemented wrong.
      * TO DO - Add Automapper to map objects.
      * TO DO - API change homepage.
+     * TO DO - Better responses from API.
      * TO DO - Add area where I can add the models myself and their associated image for Admin only.
      * TO DO - Allow JPGs only with certain file limit.
      * TO DO - Add more controllers for API end points and combine API endpoints code.
@@ -36,9 +38,9 @@ namespace MvcUi.Controllers
     public class HomeController : Controller
     {
         private readonly IConfiguration _configuration;
-        private readonly IApiDataService _apiDataService;
+        private readonly IApiDataService<ModelModel> _apiDataService;
 
-        public HomeController(IApiDataService apiDataService, IConfiguration configuration)
+        public HomeController(IApiDataService<ModelModel> apiDataService, IConfiguration configuration)
         {
             _apiDataService = apiDataService;
             _configuration = configuration;

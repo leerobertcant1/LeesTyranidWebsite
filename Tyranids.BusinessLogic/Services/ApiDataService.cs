@@ -1,5 +1,5 @@
-﻿using DataManager.Models;
-using System;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Tyranids.BusinessLogic.Abstractions;
 using Tyranids.BusinessLogic.Models;
@@ -7,7 +7,7 @@ using Tyranids.Globals;
 
 namespace Tyranids.BusinessLogic.Services
 {
-    public class ApiDataService : IApiDataService
+    public class ApiDataService<T> : IApiDataService<T>
     {
         private readonly IApiService _apiService;
         private readonly IJsonService _jsonService;
@@ -28,21 +28,47 @@ namespace Tyranids.BusinessLogic.Services
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    return new ApiModel { ErrorMessage = GlobalStrings.ErrorOccurred, IsError = true };
-                }                 
+                    return new ApiModel { ErrorMessage = GlobalStrings.ErrorOccurred, IsError = true, StatusCode = 400 };
+                }
                 else
                 {
                     var asyncResult = response.Content.ReadAsStringAsync().Result;
 
-                    return new ApiModel { IsError = false, Response = _jsonService.ConvertJsonList<ModelModel>(asyncResult) };
+                    return new ApiModel { IsError = false, Response = _jsonService.ConvertJsonList<T>(asyncResult), StatusCode = 200 };
                 }
             }
             catch (Exception exception)
             {
                 _seriLoggerService.LogData(exception);
 
-                return new ApiModel { ErrorMessage = "An error occcured", IsError = true };
+                return new ApiModel { ErrorMessage = GlobalStrings.ErrorOccurred, IsError = true, StatusCode = 500 };
             }
         }
+
+        public async Task<ApiModel> PostApiData(string endPoint, HttpContent content)
+        {
+            try
+            {
+                var response = await _apiService.PostDataAsync(endPoint, content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new ApiModel { ErrorMessage = GlobalStrings.ErrorOccurred, IsError = true, StatusCode = 400 };
+                }
+                else
+                {
+                    var asyncResult = response.Content.ReadAsStringAsync().Result;
+
+                    return new ApiModel { IsError = false, Response = GlobalStrings.SuccessfullyUpdated, StatusCode = 200 };
+                }
+            }
+            catch (Exception exception)
+            {
+                _seriLoggerService.LogData(exception);
+
+                return new ApiModel { ErrorMessage = GlobalStrings.ErrorOccurred, IsError = true, StatusCode = 500 };
+            }
+        }
+
     }
 }

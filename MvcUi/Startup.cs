@@ -46,7 +46,8 @@ namespace MvcUi
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddScoped<IApiDataService, ApiDataService>();
+            services.AddScoped<IApiDataService<ModelModel>, ApiDataService<ModelModel>>();
+            services.AddScoped<IApiDataService<string>, ApiDataService<string>>();
             services.AddScoped<IApiService, ApiService>();
             services.AddScoped<IIdentityRespository, IdentityRespository>();
             services.AddScoped<IJsonService, JsonService>();

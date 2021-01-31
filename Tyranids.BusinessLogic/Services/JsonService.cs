@@ -10,7 +10,6 @@ namespace Tyranids.BusinessLogic.Services
         public IEnumerable<T> ConvertJsonList<T>(string json)
         {
             var jArray = ConvertToJsonArray(json);
-
             var jObjectList = GetJObjectList(jArray);
 
             return GetObjectList<T>(jObjectList);
