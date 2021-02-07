@@ -1,7 +1,7 @@
-﻿using DataManager.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Tyranids.BusinessLogic.Abstractions;
+using Tyranids.MvcUi.Models;
 
 namespace Tyranids.MvcUi.Controllers
 {
@@ -19,6 +19,17 @@ namespace Tyranids.MvcUi.Controllers
         public IActionResult CreateUser()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateUser(UserModel user)
+        {
+            if (ModelState.IsValid)
+            {
+                return Content("It Worked!");
+            }
+
+            return RedirectToAction("CreateUser");
         }
 
         public IActionResult Login()
