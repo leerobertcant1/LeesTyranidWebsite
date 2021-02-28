@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using System.Net.Http;
 using Tyranids.BusinessLogic.Abstractions;
 using Tyranids.MvcUi.Models;
 
@@ -22,12 +23,18 @@ namespace Tyranids.MvcUi.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateUser(UserModel user)
+        public IActionResult CreateUser(UserModel userModel)
         {
-            if (ModelState.IsValid)
+            if(userModel == null || string.IsNullOrEmpty(userModel.Email) || string.IsNullOrEmpty(userModel.Password))
             {
-                return Content("It Worked!");
+                //return error message
             }
+
+            //Endpoint and post the data with HttpContent. Look at model.isvalid state
+
+            //api/identity/create
+            //identityModel
+            _apiDataService.PostApiData(string.Empty, new HttpContent());
 
             return RedirectToAction("CreateUser");
         }
