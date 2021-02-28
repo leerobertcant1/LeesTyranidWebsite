@@ -1,7 +1,0 @@
-C:\Github Repositories\LeesTyranidWebsite\TyranidsWpfUI\obj\Debug\WpfUI.csprojAssemblyReference.cache
-C:\Github Repositories\LeesTyranidWebsite\TyranidsWpfUI\obj\Debug\Views\HomepageView.g.cs
-C:\Github Repositories\LeesTyranidWebsite\TyranidsWpfUI\obj\Debug\Views\ShellView.g.cs
-C:\Github Repositories\LeesTyranidWebsite\TyranidsWpfUI\obj\Debug\App.g.cs
-C:\Github Repositories\LeesTyranidWebsite\TyranidsWpfUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Github Repositories\LeesTyranidWebsite\TyranidsWpfUI\obj\Debug\TyranidsWpfUI_MarkupCompile.cache
-C:\Github Repositories\LeesTyranidWebsite\TyranidsWpfUI\obj\Debug\TyranidsWpfUI_MarkupCompile.lref
