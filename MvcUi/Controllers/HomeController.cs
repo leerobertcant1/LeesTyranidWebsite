@@ -13,7 +13,6 @@ namespace MvcUi.Controllers
 {
     /* 
      * TO DO - Implement Login Identity with ASP.NET Core - Started Identity Repo up to Api level (https://docs.microsoft.com/en-us/aspnet/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project)
-     * TO DO - Add validation error and display.
      * TO DO - Add CRSF around CreateUser.cshtml and endpoint to register.
      * TO DO - Divide all areas into controllers (Models).
      * TO DO - Redo Unit of Work, implemented wrong.

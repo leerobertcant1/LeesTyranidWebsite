@@ -34,6 +34,10 @@ body {
     padding: 0;
 }
 
+.block-area {
+    display:block;
+}
+
 .btn-authenticate {
     color: #fff;
     background-color: #00b359;
@@ -64,6 +68,13 @@ body {
     color: orange;
 }
 
+.error-area {
+    margin-left: 2%;
+}
+
+.field-validation-error {
+    color: red;
+}
 
 .footer-divider {
     background-color: white;
@@ -77,7 +88,7 @@ body {
     margin-top: 5%;
 }
 
-.login-password-section{
+.login-password-section {
     margin-top: 2%;
 }
 
@@ -113,6 +124,10 @@ body {
 .paragraph-text {
     font-family: Arial;
     font-size: 1.2em;
+}
+
+span .field-validation-error {
+    color: red;
 }
 
 .tyranids-title {

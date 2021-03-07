@@ -8,15 +8,22 @@
         @using (Html.BeginForm("CreateUser", "User", FormMethod.Post))
         {
             <div class="form-group">
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <span>Please correct the following errors:</span><br />
+                    <div class="error-area">
+                        @Html.ValidationMessageFor(model => model.Email, string.Empty, new { @class = "block-area" })
+                        @Html.ValidationMessageFor(model => model.Password, string.Empty, new { @class = "block-area" })
+                    </div>
+                }
+
                 <div class="login-general-section">
                     <label for="loginEmail">Email address</label>
                     @Html.TextBoxFor(user => user.Email, new { @class = "form-control" })
-                    <!--<input type="email" class="form-control" id="loginEmail" placeholder="name@example.com">-->
                 </div>
                 <div class="login-password-section">
                     <label for="loginPassword">Password</label>
-                    @Html.TextBoxFor(user => user.Password, new { @class = "form-control" })
-                    <!--<input type="password" class="form-control" id="loginPassword" placeholder="Password">-->
+                    @Html.PasswordFor(user => user.Password, new { @class = "form-control" })
                 </div>
                 <div class="login-general-section">
                     <button type="submit" class="btn btn-authenticate">Submit</button>
