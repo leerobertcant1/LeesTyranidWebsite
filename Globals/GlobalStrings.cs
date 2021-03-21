@@ -8,8 +8,11 @@
         public static string ApplicationJson = "application/json";
         public static string DebugHomeApiDomain = "http://localhost:50125/api";
         public static string ErrorOccurred = "An error occured";
+        public static string GenericError = "GenericError";
         public static string GetAll = "GetAll?";
         public static string GetAllWhere = "GetAllWhere?";
+        public static string IdentityCreate = "Create";
+        public static string InternalServerError = "Internal Server error";
         public static string ModelClassificationEndPointEnum = "entityTypeEnum=";
         public static string ModelClassificationEnum = "modelsClassEnum=";
         public static string ModelEndpointRoute = "Models";

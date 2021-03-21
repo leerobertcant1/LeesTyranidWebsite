@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Tyranids.BusinessLogic.Abstractions;
@@ -45,10 +46,12 @@ namespace Tyranids.BusinessLogic.Services
             }
         }
 
-        public async Task<ApiModel> PostApiData(string endPoint, HttpContent content)
+        public async Task<ApiModel> PostApiData(string endPoint, dynamic model)
         {
             try
             {
+                var json = JsonConvert.SerializeObject(model);
+                var content =  new StringContent(json, System.Text.Encoding.UTF8, "application/json");
                 var response = await _apiService.PostDataAsync(endPoint, content);
 
                 if (!response.IsSuccessStatusCode)
