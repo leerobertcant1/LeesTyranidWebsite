@@ -28,8 +28,8 @@ namespace DataManager
             var container = new UnityContainer();
 
             container.RegisterType<IQueryUnitOfWork, QueryUnitOfWork>();
+            container.RegisterType<IIdentityRespository, IdentityRespository>();
             container.RegisterType<IRepository<ModelModel>, Repository<ModelModel>>();
-
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

@@ -6,6 +6,6 @@ namespace Tyranids.BusinessLogic.Abstractions
     public interface IApiService
     {
         Task<HttpResponseMessage> GetDataAsync(string endPoint);
-        Task<HttpResponseMessage> PostDataAsync(string endPoint, HttpContent content);
+        Task<HttpResponseMessage> PostDataAsync(string endPoint, StringContent content);
     }
 }

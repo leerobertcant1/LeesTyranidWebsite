@@ -35,7 +35,7 @@ namespace Tyranids.MvcUi.Controllers
                 return View(model);
             }
 
-            var endpoint = $"{GlobalStrings.DebugHomeApiDomain}/{GlobalStrings.ApiIdentity}/{GlobalStrings.IdentityCreate}";
+            var endpoint = $"{GlobalStrings.DebugHomeApiDomain}/{GlobalStrings.IdentityApiRoute}/{GlobalStrings.IdentityCreate}";
             var identityModel = new IdentityModel 
             { 
                 Password = model.Password,

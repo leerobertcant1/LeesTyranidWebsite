@@ -21,7 +21,7 @@ namespace Tyranids.BusinessLogic.Services
             }
         }
 
-        public async Task<HttpResponseMessage> PostDataAsync(string endPoint, HttpContent content)
+        public async Task<HttpResponseMessage> PostDataAsync(string endPoint, StringContent content)
         {
             using (var client = new HttpClient())
             {

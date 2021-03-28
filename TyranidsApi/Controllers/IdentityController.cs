@@ -5,12 +5,12 @@ using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http;
 using System.Text;
-using System.Web.Mvc;
+using System.Web.Http;
 
 namespace Tyranids.Api.Controllers
 {
     [RoutePrefix("api/identity")]
-    public class IdentityController : Controller
+    public class IdentityController : ApiController
     {
         private readonly IIdentityRespository _identityRespository;
 

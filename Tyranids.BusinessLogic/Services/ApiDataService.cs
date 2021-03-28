@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Tyranids.BusinessLogic.Abstractions;
 using Tyranids.BusinessLogic.Models;
@@ -51,7 +52,7 @@ namespace Tyranids.BusinessLogic.Services
             try
             {
                 var json = JsonConvert.SerializeObject(model);
-                var content =  new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                var content =  new StringContent(json, Encoding.UTF8, GlobalStrings.ApplicationJson);
                 var response = await _apiService.PostDataAsync(endPoint, content);
 
                 if (!response.IsSuccessStatusCode)
