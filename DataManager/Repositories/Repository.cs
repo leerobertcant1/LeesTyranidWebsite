@@ -9,22 +9,29 @@ namespace DataManager.Repositories
     {
         public IEnumerable<T> GetAll(string connectionString, IQueryUnitOfWork queryUnitOfWork)
         {
-            return queryUnitOfWork.LoadData<T>($"{ GetAllFrom } { GetEntity() }", connectionString);
+            return queryUnitOfWork.LoadData<T>($"{ GetAllFrom } { GetEntity(false) }", connectionString);
         }
      
 
         public IEnumerable<T> GetAllWhere(string whereClause, string connectionString, IQueryUnitOfWork queryUnitOfWork)
         {
-            return queryUnitOfWork.LoadData<T>($"{ GetAllFrom } { GetEntity() } { whereClause }", connectionString); ;
+            return queryUnitOfWork.LoadData<T>($"{ GetAllFrom } { GetEntity(false) } { whereClause }", connectionString);
         }
-             
-        private string GetEntity()
+
+        public IEnumerable<T> GetAllWhereJoined(string whereClause, string connectionString, IQueryUnitOfWork queryUnitOfWork, string entity)
+        {
+            var query = $"{ GetAllFromModelsPictures } { GetEntity(true) } { whereClause }";
+
+            return queryUnitOfWork.LoadData<T>(query, connectionString);
+        }
+
+        private string GetEntity(bool isJoined)
         {
             var modelType = typeof(T);
 
-            if(modelType == typeof(ModelModel))
+            if(modelType == typeof(ModelModel) || modelType == typeof(ModelModelPicture))
             {
-                return EntityTable.ModelEntity;
+                return isJoined ? EntityTable.ModelPicturesEntities : EntityTable.ModelEntity;
             }
 
             return string.Empty;

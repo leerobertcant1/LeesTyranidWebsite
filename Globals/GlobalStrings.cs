@@ -17,6 +17,7 @@
         public static string ModelClassificationEnum = "modelsClassEnum=";
         public static string ModelEndpointRoute = "Models";
         public static string LocalHostApiEndPoints = "ApiEndpoints:LocalHost";
+        public static string Picture = "pictures=";
         public static string SuccessfullyUpdated = "Successfully updated";
     }
 }

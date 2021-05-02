@@ -30,6 +30,7 @@ namespace DataManager
             container.RegisterType<IQueryUnitOfWork, QueryUnitOfWork>();
             container.RegisterType<IIdentityRespository, IdentityRespository>();
             container.RegisterType<IRepository<ModelModel>, Repository<ModelModel>>();
+            container.RegisterType<IRepository<ModelModelPicture>, Repository<ModelModelPicture>>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

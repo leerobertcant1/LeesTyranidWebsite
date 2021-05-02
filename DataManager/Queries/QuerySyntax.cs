@@ -2,7 +2,8 @@
 {
     public static class QuerySyntax
     {
-        public static string Select = "SELECT";
+        public static readonly string Select = "SELECT";
+        public static readonly string AllModelsPicturesFrom = "MO.*, PI.* FROM ";
         public static readonly string AllFrom = "* FROM";
     }
 }

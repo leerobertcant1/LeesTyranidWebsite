@@ -25,6 +25,11 @@ namespace Tyranids.Api.Controllers
         {
             var result = _identityRespository.CreateUser(identityModel);
 
+            if(result == null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            }
+
             if (!result.Succeeded)
             {
                 return new HttpResponseMessage(HttpStatusCode.Forbidden);

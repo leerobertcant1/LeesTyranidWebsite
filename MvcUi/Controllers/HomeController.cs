@@ -12,29 +12,35 @@ using Tyranids.MvcUi.Models;
 namespace MvcUi.Controllers
 {
     /* 
+     * TO DO - Add images to page.
+     * TO DO - Disable login pages
+     * TO DO - Error page.
+     * TO DO - Deployment normal on Azure.
+     * TO DO - CICD process.
+     * TO DO - Add Unit Tests.
+     * TO DO - Add Integration Tests.
+     * TO DO - Add Automation Tests.
+     * -------------------------------------------------
+     * Nice to have:
+     * TO DO - Re-organise solutions + rename
+     * TO DO - Add area where I can add the models myself and their associated image for Admin only.
      * TO DO - Implement Login Identity with ASP.NET Core - Started Identity Repo up to Api level (https://docs.microsoft.com/en-us/aspnet/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project)
-     * TO DO - Add CRSF around CreateUser.cshtml and endpoint to register.
      * TO DO - Divide all areas into controllers (Models).
-     * TO DO - Error handling around APIs for status codes. etc.
-     * TO Do - Error page.
+     * TO DO - Add CRSF around CreateUser.cshtml and endpoint to register.
+     * TO DO - Error handling around APIs for status codes. etc.     
      * TO DO - Redo Unit of Work, implemented wrong.
      * TO DO - Add Automapper to map objects.
      * TO DO - API change homepage.
      * TO DO - Better responses from API.
-     * TO DO - Add area where I can add the models myself and their associated image for Admin only.
      * TO DO - Allow JPGs only with certain file limit.
      * TO DO - Add more controllers for API end points and combine API endpoints code.
      * TO DO - Add security around end points and request limit, somehow?
-     * TO DO - Change to Stored Procedures.
-     * TO DO - Add Unit Tests.
-     * TO DO - Add Integration Tests.
+     * TO DO - Change to Stored Procedures.         
      * TO DO - Look at ES6+ for JS functions.
-     * TO DO - Add empty DB data.
-     * TO DO - Deployment normal on Azure.
-     * TO DO - Deployment with Docker.
-     * TO DO - CICD process.
+     * TO DO - Add empty DB data.     
+     * TO DO - Deployment with Docker.     
      * TO DO - Look at changing to DDD.
-     * TO DO - Investigate GraphQL.
+     * TO DO - Investigate GraphQL.     
      */
 
     public class HomeController : Controller
@@ -74,7 +80,9 @@ namespace MvcUi.Controllers
         {
             return $"{GlobalStrings.DebugHomeApiDomain}/" +
                    $"{GlobalStrings.ModelEndpointRoute}/" +
-                   $"{GlobalStrings.GetAllWhere}{GlobalStrings.ModelClassificationEnum}{modelClass}";
+                   $"{GlobalStrings.GetAllWhere}" +
+                   $"{GlobalStrings.ModelClassificationEnum}{modelClass}&" + 
+                   $"{GlobalStrings.Picture}{true}";
         }
     }
 }

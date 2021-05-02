@@ -1,7 +1,6 @@
 ﻿using DataManager.Abstractions;
 using DataManager.Models;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DataManager.Repositories
 {
@@ -9,12 +8,9 @@ namespace DataManager.Repositories
     {
         public IdentityResult CreateUser(IdentityModel identityModel)
         {
-            var userStore = new UserStore<IdentityUser>();
-            var manager = new UserManager<IdentityUser>(userStore);
+            //Need to implement user creation here
 
-            var user = new IdentityUser() { UserName = identityModel.Username};
-
-            return manager.Create(user, identityModel.Password);
+            return null;
         }
     }
 }

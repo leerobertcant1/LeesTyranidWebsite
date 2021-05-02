@@ -1,6 +1,4 @@
-﻿
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DataManager.Abstractions
 {
@@ -8,5 +6,6 @@ namespace DataManager.Abstractions
     {
         IEnumerable<T> GetAll(string connectionString, IQueryUnitOfWork queryUnitOfWork);
         IEnumerable<T> GetAllWhere(string whereClause, string connectionString, IQueryUnitOfWork queryUnitOfWork);
+        IEnumerable<T> GetAllWhereJoined(string whereClause, string connectionString, IQueryUnitOfWork queryUnitOfWork, string entity);
     }
 }

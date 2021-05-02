@@ -2,14 +2,15 @@
 {
     public class EntityTable: BaseEntityTable
     {
-        public static readonly string ClassificationEntity = $"{QueryPrefix}[Classification]";
-        public static readonly string ModelEntity = $"{QueryPrefix}[Model]";
-        public static readonly string ModelSectionEntity = $"{QueryPrefix}[ModelSection]";
-        public static readonly string ModelSectionActivityEntity = $"{QueryPrefix}[ModelSectionActivity]";
-        public static readonly string PaintEntity = $"{QueryPrefix}[Paint]";
-        public static readonly string PaintingActivityEntity = $"{QueryPrefix}[PaintingActivity]";
-        public static readonly string PictureEntity = $"{QueryPrefix}[Picture]";
-        public static readonly string TechniqueEntity = $"{QueryPrefix}[Technique]";
-        public static readonly string ToolEntity = $"{QueryPrefix}[Tool]";
+        public static readonly string ClassificationEntity = $"{QueryPrefix}[Classification] CL";
+        public static readonly string ModelEntity = $"{QueryPrefix}[Model] MO";
+        public static readonly string ModelPicturesEntities = $"{QueryPrefix}[Model] MO INNER JOIN {QueryPrefix}[Picture] PI On PI.ModelId = MO.Id";
+        public static readonly string ModelSectionEntity = $"{QueryPrefix}[ModelSection] MS";
+        public static readonly string ModelSectionActivityEntity = $"{QueryPrefix}[ModelSectionActivity] MSA";
+        public static readonly string PaintEntity = $"{QueryPrefix}[Paint] PA";
+        public static readonly string PaintingActivityEntity = $"{QueryPrefix}[PaintingActivity] PAA";        
+        public static readonly string PictureEntity = $"{QueryPrefix}[Picture] PI";
+        public static readonly string TechniqueEntity = $"{QueryPrefix}[Technique] TE";
+        public static readonly string ToolEntity = $"{QueryPrefix}[Tool] TO";
     }
 }

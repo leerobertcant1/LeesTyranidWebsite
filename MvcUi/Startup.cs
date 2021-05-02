@@ -51,8 +51,9 @@ namespace MvcUi
             services.AddScoped<IApiService, ApiService>();
             services.AddScoped<IIdentityRespository, IdentityRespository>();
             services.AddScoped<IJsonService, JsonService>();
-            services.AddScoped<IQueryUnitOfWork, QueryUnitOfWork>();          
+            services.AddScoped<IQueryUnitOfWork, QueryUnitOfWork>();
             services.AddScoped<IRepository<ModelModel>, Repository<ModelModel>>();
+            services.AddScoped<IRepository<ModelModelPicture>, Repository<ModelModelPicture>>();
             services.AddScoped<ISeriLoggerService, SeriLoggerService>();
 
             services.AddMvc();

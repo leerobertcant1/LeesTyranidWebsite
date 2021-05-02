@@ -1,4 +1,5 @@
 ﻿using DataManager.Abstractions;
+using DataManager.Entities;
 using DataManager.Enums;
 using DataManager.Models;
 using Globals;
@@ -17,11 +18,13 @@ namespace Api.Controllers
     {
         private readonly IQueryUnitOfWork _queryUnitOfWork;
         private readonly IRepository<ModelModel> _repository;
+        IRepository<ModelModelPicture> _joinedRepository;
 
-        public ModelsController(IQueryUnitOfWork queryUnitOfWork, IRepository<ModelModel> repository)
+        public ModelsController(IQueryUnitOfWork queryUnitOfWork, IRepository<ModelModel> repository, IRepository<ModelModelPicture> joinedRepository)
         {
             _queryUnitOfWork = queryUnitOfWork;
             _repository = repository;
+            _joinedRepository = joinedRepository;
         }
 
         [HttpGet]
@@ -44,16 +47,19 @@ namespace Api.Controllers
 
         [HttpGet]
         [Route("GetAllWhere")]
-        public HttpResponseMessage GetAllWhere(ModelsClassEnum modelsClassEnum)
+        public HttpResponseMessage GetAllWhere(ModelsClassEnum modelsClassEnum, bool pictures)
         {
-            var whereClause = $"Where ClassificationId = { (int) modelsClassEnum }";
+            var whereClause = $"WHERE MO.ClassificationId = { (int) modelsClassEnum }";
 
-            var items = _repository.GetAllWhere(whereClause, GlobalTypes.DbConnectionString, _queryUnitOfWork);
+            var items = pictures ? _joinedRepository.GetAllWhereJoined(whereClause, GlobalTypes.DbConnectionString, _queryUnitOfWork, EntityTable.PictureEntity) : 
+                                   _repository.GetAllWhere(whereClause, GlobalTypes.DbConnectionString, _queryUnitOfWork);
             var noItems = !items.Any();
 
             if (noItems)
+            {
                 return new HttpResponseMessage(HttpStatusCode.NoContent);
-
+            }
+                
             return new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new StringContent(JsonConvert.SerializeObject(items), Encoding.UTF8, WebTypes.Json)
