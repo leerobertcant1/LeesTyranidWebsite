@@ -20,9 +20,7 @@ namespace DataManager.Repositories
 
         public IEnumerable<T> GetAllWhereJoined(string whereClause, string connectionString, IQueryUnitOfWork queryUnitOfWork, string entity)
         {
-            var query = $"{ GetAllFromModelsPictures } { GetEntity(true) } { whereClause }";
-
-            return queryUnitOfWork.LoadData<T>(query, connectionString);
+            return queryUnitOfWork.LoadData<T>($"{ GetAllFromModelsPictures } { GetEntity(true) } { whereClause }", connectionString);
         }
 
         private string GetEntity(bool isJoined)

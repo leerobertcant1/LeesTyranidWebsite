@@ -4,6 +4,7 @@ using DataManager.Enums;
 using DataManager.Models;
 using Globals;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -32,17 +33,8 @@ namespace Api.Controllers
         public HttpResponseMessage GetAll()
         {
             var items = _repository.GetAll(GlobalTypes.DbConnectionString, _queryUnitOfWork);
-            var noItems = !items.Any();
 
-            if (noItems)
-            {
-                return new HttpResponseMessage(HttpStatusCode.NoContent);
-            }
-              
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new StringContent(JsonConvert.SerializeObject(items), Encoding.UTF8, WebTypes.Json)
-            };
+            return GetResponse(items);
         }
 
         [HttpGet]
@@ -50,20 +42,20 @@ namespace Api.Controllers
         public HttpResponseMessage GetAllWhere(ModelsClassEnum modelsClassEnum, bool pictures)
         {
             var whereClause = $"WHERE MO.ClassificationId = { (int) modelsClassEnum }";
-
             var items = pictures ? _joinedRepository.GetAllWhereJoined(whereClause, GlobalTypes.DbConnectionString, _queryUnitOfWork, EntityTable.PictureEntity) : 
                                    _repository.GetAllWhere(whereClause, GlobalTypes.DbConnectionString, _queryUnitOfWork);
-            var noItems = !items.Any();
 
-            if (noItems)
-            {
-                return new HttpResponseMessage(HttpStatusCode.NoContent);
-            }
-                
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new StringContent(JsonConvert.SerializeObject(items), Encoding.UTF8, WebTypes.Json)
-            };
+            return GetResponse(items);
+        }
+
+        private HttpResponseMessage GetResponse(IEnumerable<ModelModel> items)
+        {
+            return !items.Any() ? 
+                new HttpResponseMessage(HttpStatusCode.NoContent): 
+                new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JsonConvert.SerializeObject(items), Encoding.UTF8, WebTypes.Json)
+                };
         }
     }
 }

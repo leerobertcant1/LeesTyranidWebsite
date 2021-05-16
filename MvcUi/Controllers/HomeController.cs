@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using DataManager.Models;
 using Microsoft.AspNetCore.Http;
@@ -12,7 +14,7 @@ using Tyranids.MvcUi.Models;
 namespace MvcUi.Controllers
 {
     /* 
-     * TO DO - Add images to page.
+     * TO DO - Style pages
      * TO DO - Disable login pages
      * TO DO - Error page.
      * TO DO - Deployment normal on Azure.
@@ -23,6 +25,7 @@ namespace MvcUi.Controllers
      * -------------------------------------------------
      * Nice to have:
      * TO DO - Re-organise solutions + rename
+     * TO DO - Dynamically read local host.
      * TO DO - Add area where I can add the models myself and their associated image for Admin only.
      * TO DO - Implement Login Identity with ASP.NET Core - Started Identity Repo up to Api level (https://docs.microsoft.com/en-us/aspnet/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project)
      * TO DO - Divide all areas into controllers (Models).
@@ -46,9 +49,9 @@ namespace MvcUi.Controllers
     public class HomeController : Controller
     {
         private readonly IConfiguration _configuration;
-        private readonly IApiDataService<ModelModel> _apiDataService;
+        private readonly IApiDataService<ModelModelPicture> _apiDataService;
 
-        public HomeController(IApiDataService<ModelModel> apiDataService, IConfiguration configuration)
+        public HomeController(IApiDataService<ModelModelPicture> apiDataService, IConfiguration configuration)
         {
             _apiDataService = apiDataService;
             _configuration = configuration;
@@ -63,7 +66,7 @@ namespace MvcUi.Controllers
         {
             var endpoint = GetModelClassificationString(type);
             var apiData = await _apiDataService.GetApiData(endpoint);
-            var castedData = GlobalFunctions.CastIList<ModelModel>(apiData.Response);
+            var castedData = ReplaceDuplicateNames(GlobalFunctions.CastIList<ModelModelPicture>(apiData.Response));
 
             var isNoApiData = apiData == null || apiData.Response == null || castedData.Count == 0;
 
@@ -83,6 +86,36 @@ namespace MvcUi.Controllers
                    $"{GlobalStrings.GetAllWhere}" +
                    $"{GlobalStrings.ModelClassificationEnum}{modelClass}&" + 
                    $"{GlobalStrings.Picture}{true}";
+        }
+
+        private IList<ModelModelPicture> ReplaceDuplicateNames(IList<ModelModelPicture> castedData)
+        {
+            for (var i = 0; i < castedData.Count; i++)
+            {
+                var name = castedData[i].Name;
+                var nameTotal = castedData.Select(x => x).Where(x => x.Name == castedData[i].Name && x.Name != string.Empty).Count();
+
+                if (nameTotal <= 1 || i == 0 || i >= (castedData.Count - 1))
+                    continue;
+
+                var isFirst = true;
+                for (int j = 0; j < castedData.Count; j++)
+                {
+                    if (castedData[j].Name != name)
+                        continue;
+
+                    if (isFirst)
+                    {
+                        isFirst = false;
+                        continue;
+                    }
+
+                    castedData[j].Name = string.Empty;
+                    
+                    }
+                }
+
+            return castedData;
         }
     }
 }

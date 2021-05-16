@@ -47,6 +47,7 @@ namespace MvcUi
             });
 
             services.AddScoped<IApiDataService<ModelModel>, ApiDataService<ModelModel>>();
+            services.AddScoped<IApiDataService<ModelModelPicture>, ApiDataService<ModelModelPicture>>();
             services.AddScoped<IApiDataService<string>, ApiDataService<string>>();
             services.AddScoped<IApiService, ApiService>();
             services.AddScoped<IIdentityRespository, IdentityRespository>();
