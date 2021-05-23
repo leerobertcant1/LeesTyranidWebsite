@@ -19,8 +19,13 @@
                 </p>
             </div>
             <div class="row">
-                <img src="/@item.Location/@item.Title" width="500" height="600" />
-            </div>           
+                @foreach (var title in item.Titles)
+                {
+                    <div class="col-3">
+                        <img src="/@item.Location/@title" width="500" height="600" />
+                    </div>
+                }
+            </div>
         }
     }
 </div>

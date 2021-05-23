@@ -14,7 +14,7 @@ using Tyranids.MvcUi.Models;
 namespace MvcUi.Controllers
 {
     /* 
-     * TO DO - Style pages
+     * TO DO - Style pages - figure out the rows and cols.
      * TO DO - Disable login pages
      * TO DO - Error page.
      * TO DO - Deployment normal on Azure.
@@ -66,11 +66,14 @@ namespace MvcUi.Controllers
         {
             var endpoint = GetModelClassificationString(type);
             var apiData = await _apiDataService.GetApiData(endpoint);
-            var castedData = ReplaceDuplicateNames(GlobalFunctions.CastIList<ModelModelPicture>(apiData.Response));
+            var castedData = GlobalFunctions.CastIList<ModelModelPicture>(apiData.Response);
 
             var isNoApiData = apiData == null || apiData.Response == null || castedData.Count == 0;
+            var viewModel = GetViewModel(castedData);
 
-            return isNoApiData ? View() : View(new ModelsViewModel { Type = type, Models = castedData });
+            return isNoApiData || viewModel == new ModelsViewModel() ? 
+                View() : 
+                View(new ModelsViewModel { Type = type, Models = viewModel.Models });
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -88,34 +91,26 @@ namespace MvcUi.Controllers
                    $"{GlobalStrings.Picture}{true}";
         }
 
-        private IList<ModelModelPicture> ReplaceDuplicateNames(IList<ModelModelPicture> castedData)
+        private ModelsViewModel GetViewModel(IList<ModelModelPicture> castedData)
         {
-            for (var i = 0; i < castedData.Count; i++)
+            var viewModel = new ModelsViewModel();
+
+            foreach (var castedItem in castedData)
             {
-                var name = castedData[i].Name;
-                var nameTotal = castedData.Select(x => x).Where(x => x.Name == castedData[i].Name && x.Name != string.Empty).Count();
+                //change to out parameter.
+                var existingItem = viewModel.Models.Where(x => x.Name == castedItem.Name).FirstOrDefault();
 
-                if (nameTotal <= 1 || i == 0 || i >= (castedData.Count - 1))
-                    continue;
-
-                var isFirst = true;
-                for (int j = 0; j < castedData.Count; j++)
+                if(existingItem == null)
                 {
-                    if (castedData[j].Name != name)
-                        continue;
+                    viewModel.Models.Add(new PictureViewModel { Location = castedItem.Location, Name = castedItem.Name, Titles = new List<string> { castedItem.Title } });
 
-                    if (isFirst)
-                    {
-                        isFirst = false;
-                        continue;
-                    }
-
-                    castedData[j].Name = string.Empty;
-                    
-                    }
+                    continue;
                 }
 
-            return castedData;
+                viewModel.Models.Where(x => x == existingItem).FirstOrDefault().Titles.Add(castedItem.Title);
+            }
+
+            return viewModel;
         }
     }
 }

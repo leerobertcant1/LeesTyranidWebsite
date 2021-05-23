@@ -1,11 +1,10 @@
-﻿using DataManager.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Tyranids.MvcUi.Models
 {
     public class ModelsViewModel
     {
-        public IEnumerable<ModelModelPicture> Models { get; set; }
+        public IList<PictureViewModel> Models { get; set; } = new List<PictureViewModel>();
         public string Type { get; set; }
     }
 }
