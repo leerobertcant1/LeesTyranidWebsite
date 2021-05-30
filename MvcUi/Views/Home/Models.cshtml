@@ -1,7 +1,7 @@
 ﻿@model Tyranids.MvcUi.Models.ModelsViewModel;
 
 <div class="model-role-title row">
-    <h2>@Model.Type units</h2>
+    <h2>@Model.Type</h2>
 </div>
 
 <div>
@@ -21,10 +21,11 @@
             <div class="row">
                 @foreach (var title in item.Titles)
                 {
-                    <div class="col-3">
-                        <img src="/@item.Location/@title" width="500" height="600" />
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 img-area">
+                        <img class="img-item" src="/@item.Location/@title" width="500" height="600" />
                     </div>
                 }
+                <hr/>
             </div>
         }
     }

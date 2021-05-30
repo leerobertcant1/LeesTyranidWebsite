@@ -13,11 +13,11 @@ using Tyranids.MvcUi.Models;
 
 namespace MvcUi.Controllers
 {
-    /* 
-     * TO DO - Style pages - figure out the rows and cols.
-     * TO DO - Disable login pages
-     * TO DO - Error page.
-     * TO DO - Deployment normal on Azure.
+    /* TO DO - Get working on Mobile: issues around Navbar and image size (use js(site.js) for image size).
+     * TO DO - Remove API creation for now and limit API calls prior to deployment.
+     * TO DO = Change descriptions and footer/ header.
+     * TO DO - Check Games Workshop's rules.
+     * TO DO - Deployment (Maybe Azure, deploy Website, Database and API). If not, look at cheap deployment.
      * TO DO - CICD process.
      * TO DO - Add Unit Tests.
      * TO DO - Add Integration Tests.
@@ -97,7 +97,6 @@ namespace MvcUi.Controllers
 
             foreach (var castedItem in castedData)
             {
-                //change to out parameter.
                 var existingItem = viewModel.Models.Where(x => x.Name == castedItem.Name).FirstOrDefault();
 
                 if(existingItem == null)

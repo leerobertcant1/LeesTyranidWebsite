@@ -8,6 +8,10 @@
     setNavBarCss(navbarItemId);
 });
 
+function setImageSize() {
+
+}
+
 function setNavBarCss(navbarItemId)
 {
     removeNavbarHighlight();

@@ -41,6 +41,10 @@
     margin: 2% 0 0 2%;
 }
 
+.error-text {
+    color: red;
+}
+
 .field-validation-error {
     color: red;
 }
@@ -51,6 +55,14 @@
 
 .general-title, .login-title {
     color: #008000;
+}
+
+.img-area {
+    margin-bottom: 2%;
+}
+
+.img-item {
+    border-radius: 20px;
 }
 
 .login-general-section, .model-role-title {

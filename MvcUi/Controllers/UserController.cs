@@ -51,8 +51,6 @@ namespace Tyranids.MvcUi.Controllers
             }
 
             return View();
-
-            //return RedirectToAction("CreateUser");
         }
 
         public IActionResult Login(UserModel model)

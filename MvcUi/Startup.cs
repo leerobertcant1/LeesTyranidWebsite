@@ -83,6 +83,12 @@ namespace MvcUi
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                    "NotFound",
+                    "{*url}",
+                    new { controller = "Error", action = "PageNotFound" }
+                );
             });
 
         }
