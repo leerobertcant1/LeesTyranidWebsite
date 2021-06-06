@@ -65,6 +65,14 @@
     border-radius: 20px;
 }
 
+left-margin-large {
+    margin-left: 10%;
+}
+
+left-margin-small {
+    margin-left: 5%;
+}
+
 .login-general-section, .model-role-title {
     margin-top: 5%;
 }

@@ -18,11 +18,11 @@
                     @item.Name
                 </p>
             </div>
-            <div class="row">
+            <div class="row img-row">
                 @foreach (var title in item.Titles)
                 {
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 img-area">
-                        <img class="img-item" src="/@item.Location/@title" width="500" height="600" />
+                        <img class="img-item" src="/@item.Location/@title" />
                     </div>
                 }
                 <hr/>
