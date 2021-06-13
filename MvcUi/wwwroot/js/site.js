@@ -20,18 +20,17 @@ function setImageSize() {
 
     let imageItems = $(".img-item");
     let imageRow = $(".img-row");
+    let isMobile = false;
     let limits = { Mobile: 600, OnePictureLarge: 1000, OnePictureSmall: 600 };
 
     for (let rowIndex = 0; rowIndex < imageRow.length; rowIndex++) {
         for (let itemIndex = 0; itemIndex < imageItems.length; itemIndex++) {
-            let isMobile = imageRow[rowIndex].clientWidth < limits.Mobile;
+            isMobile = imageRow[rowIndex].clientWidth < limits.Mobile;
 
-            imageItems[itemIndex].width = isMobile ? 400 : 500;
-            imageItems[itemIndex].height = isMobile ? 400 : 600;
+            imageItems[itemIndex].width = isMobile ? (imageRow[rowIndex].clientWidth - (imageRow[rowIndex].clientWidth * .20)) : 500;
+            imageItems[itemIndex].height = isMobile ? (imageRow[rowIndex].clientWidth - (imageRow[rowIndex].clientWidth * .20)) : 600;
 
             setImgCss({ ImageRow: imageRow, RowIndex: rowIndex, ImageItems: imageItems, ItemIndex: itemIndex, Limits: limits });
-
-            console.log(`${imageRow[rowIndex].clientWidth}`);
         }
     }
 }
@@ -40,14 +39,33 @@ function setImgCss(values) {
     if (values.ImageRow[values.RowIndex].clientWidth < values.Limits.OnePictureLarge && values.ImageRow[values.RowIndex].clientWidth > values.Limits.OnePictureSmall) {
         $(values.ImageItems[values.ItemIndex]).addClass("left-margin-large");
         $(values.ImageItems[values.ItemIndex]).removeClass("left-margin-small");
-        $(".model-role-title", ".tyranids-title").removeClass("left-margin-large");
-        $(".model-role-title", ".tyranids-title").removeClass("left-margin-small");
+
+        if (values.RowIndex > 0) {
+            return;
+        }
+
+        $(".model-role-title, .tyranids-title").removeClass("left-margin-large");
+        $(".model-role-title, .tyranids-title").removeClass("left-margin-small");
     } else if (values.ImageRow[values.RowIndex].clientWidth < values.Limits.OnePictureLarge) {
         $(values.ImageItems[values.ItemIndex]).removeClass("left-margin-large");
-        $(values.ImageItems[values.ItemIndex], ".model-role-title", ".tyranids-title").addClass("left-margin-small");
+        $(values.ImageItems[values.ItemIndex]).addClass("left-margin-small");
+
+        if (values.RowIndex > 0) {
+            return;
+        }
+
+        $(".model-role-title, .tyranids-title").removeClass("left-margin-large");
+        $(".model-role-title, .tyranids-title").addClass("left-margin-small");
     } else {
-        $(values.ImageItems[values.ItemIndex], ".model-role-title", ".tyranids-title").removeClass("left-margin-large");
-        $(values.ImageItems[values.ItemIndex], ".model-role-title", ".tyranids-title").removeClass("left-margin-small");
+        $(values.ImageItems[values.ItemIndex]).removeClass("left-margin-large");
+        $(values.ImageItems[values.ItemIndex]).removeClass("left-margin-small");
+
+        if (values.RowIndex > 0) {
+            return;
+        }
+
+        $(".model-role-title, .tyranids-title").removeClass("left-margin-large");
+        $(".model-role-title, .tyranids-title").removeClass("left-margin-small");
     }
 }
 

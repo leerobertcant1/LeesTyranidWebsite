@@ -13,7 +13,7 @@ using Tyranids.MvcUi.Models;
 
 namespace MvcUi.Controllers
 {
-    /* TO DO - Get working on Mobile: issues around Navbar and image size (use js(site.js) for image size). - jQuery not working for labels?
+    /*
      * TO DO - Remove API creation for now and limit API calls prior to deployment.
      * TO DO = Change descriptions and footer/ header.
      * TO DO - Check Games Workshop's rules.

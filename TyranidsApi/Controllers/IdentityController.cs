@@ -23,22 +23,24 @@ namespace Tyranids.Api.Controllers
         [Route("Create")]
         public HttpResponseMessage CreateUser(IdentityModel identityModel)
         {
-            var result = _identityRespository.CreateUser(identityModel);
+            //var result = _identityRespository.CreateUser(identityModel);
 
-            if(result == null)
-            {
-                return new HttpResponseMessage(HttpStatusCode.InternalServerError);
-            }
+            //if(result == null)
+            //{
+            //    return new HttpResponseMessage(HttpStatusCode.InternalServerError);
+            //}
 
-            if (!result.Succeeded)
-            {
-                return new HttpResponseMessage(HttpStatusCode.Forbidden);
-            }
+            //if (!result.Succeeded)
+            //{
+            //    return new HttpResponseMessage(HttpStatusCode.Forbidden);
+            //}
 
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new StringContent(JsonConvert.SerializeObject(HttpStatusCode.OK), Encoding.UTF8, WebTypes.Json)
-            };
+            //return new HttpResponseMessage(HttpStatusCode.OK)
+            //{
+            //    Content = new StringContent(JsonConvert.SerializeObject(HttpStatusCode.OK), Encoding.UTF8, WebTypes.Json)
+            //};
+
+            return null;
         }
     }
 }
